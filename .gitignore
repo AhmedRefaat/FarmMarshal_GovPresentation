@@ -1,0 +1,32 @@
+# Dependencies -------------------------------------------------------------
+node_modules/
+
+# Secrets — plaintext passphrases. Never commit this file.
+config/users.json
+
+# Build output --------------------------------------------------------------
+dist-offline/
+FarmMarshal-Offline.zip
+
+# Generated derivatives — NOT ignored.
+#
+# The decks reference assets/images/optimized/ and assets/screenshots/optimized/
+# directly, so these must be committed or a fresh clone (and every CI deploy)
+# renders with broken images. `npm run optimize` regenerates them
+# deterministically; the originals in approved/ and original/ remain the
+# reviewed masters.
+
+# PDF exports are large and regenerable — see docs/PDF_EXPORT.md
+*.pdf
+
+# OS and editor noise -------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.swp
+*~
+
+# Logs
+npm-debug.log*
+*.log

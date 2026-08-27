@@ -1,0 +1,106 @@
+name: Deploy presentation to GitHub Pages
+
+# Publishing this deck makes it readable by anyone with the URL. Read
+# docs/SECURITY_LIMITATIONS.md before enabling this workflow, and scrub farm
+# identities, coordinates and commercial figures from the published build.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never run two deployments at once; the second would race the first.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          # Media is stored as ordinary blobs, not LFS. If that ever changes,
+          # this must become `lfs: true` AND the media must move off Pages,
+          # because Pages serves LFS pointers rather than file contents.
+          lfs: false
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Vendor reveal.js and fonts
+        run: npm run vendor
+
+      - name: Generate access credentials
+        # Optional. Without FM_USERS_JSON the deck publishes with no gate, which
+        # is a deliberate and visible default rather than a silent one.
+        env:
+          FM_USERS_JSON: ${{ secrets.FM_USERS_JSON }}
+        run: |
+          if [ -n "$FM_USERS_JSON" ]; then
+            printf '%s' "$FM_USERS_JSON" > config/users.json
+            npm run create-user
+            rm -f config/users.json
+            echo "Access gate configured."
+          else
+            echo "::warning::FM_USERS_JSON secret not set. Publishing WITHOUT an access gate."
+          fi
+
+      - name: Validate deck structure
+        run: npm run validate
+
+      - name: Test auth derivation parity
+        run: npm test
+
+      - name: Verify build
+        run: npm run verify
+
+      - name: Assemble artifact
+        run: |
+          mkdir -p _site
+          cp -r index.html login.html config.html \
+                presentation-en.html presentation-ar.html \
+                assets config css js vendor docs _site/
+          # Defence in depth: the secret must not reach the published site.
+          rm -f _site/config/users.json
+          # Pages would otherwise try to run the output through Jekyll, which
+          # strips directories beginning with an underscore.
+          touch _site/.nojekyll
+
+      - name: Confirm no plaintext credentials in the artifact
+        run: |
+          if [ -f _site/config/users.json ]; then
+            echo "::error::config/users.json is present in the artifact. Refusing to deploy."
+            exit 1
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

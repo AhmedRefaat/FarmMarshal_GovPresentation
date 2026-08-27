@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <title>Farm Marshal — From Observation to Evidence</title>
+
+  <link rel="icon" href="assets/icons/drone.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/english.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/print.css">
+
+  <script src="config/presentation.config.js"></script>
+  <script src="config/auth.config.js"></script>
+  <script src="config/slide-index.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Runs before the body paints, so gated content never flashes on screen.
+    if (!window.FMAuth.requireSession()) {
+      document.documentElement.style.visibility = 'hidden';
+    }
+  </script>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 1 — Title                                                    -->
+    <!-- ================================================================== -->
+    <section id="title"
+             class="is-centered fm-scrim is-even"
+             data-background-video="assets/video/hero-aerial.mp4"
+             data-background-video-loop
+             data-background-video-muted
+             data-background-size="cover"
+             data-background-image="assets/images/optimized/farm-aerial.jpg">
+      <p class="fm-eyebrow">Al Sarrani Group &times; Oriel Company</p>
+      <h1>Farm Marshal</h1>
+      <p class="fm-lead" style="max-width:38ch;margin-inline:auto;">
+        From Observation to Evidence.<br>
+        A supervised pilot proposal for the Kingdom of Saudi Arabia.
+      </p>
+      <p class="fm-footnote">
+        Ministry of Environment, Water &amp; Agriculture &middot; Ministry of Interior &middot; Ministry of Defense
+      </p>
+      <aside class="notes">
+        <h4>Do not speak over this slide.</h4>
+        <p>Hold while introductions finish. The Saudi partner opens, not the presenter.
+           His Public Security background is the credential that makes MOI and MOD listen —
+           spend it in the first 90 seconds.</p>
+        <p>Partner's line: "I looked at this as an operator, not an investor. What convinced
+           me is that every action on the farm becomes something you can verify."</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 2 — Concept film                                             -->
+    <!-- ================================================================== -->
+    <section id="video" class="is-centered">
+      <video
+        data-fm-video
+        data-fm-autoplay="false"
+        controls
+        playsinline
+        preload="metadata"
+        poster="assets/images/optimized/title-plate.jpg"
+        aria-label="Farm Marshal concept film"
+        style="max-height:76vh;width:auto;max-width:100%;border-radius:10px;">
+        <source src="assets/video/concept-film.mp4" type="video/mp4">
+        Your browser cannot play this video.
+      </video>
+      <p class="fm-note" style="text-align:center;margin-inline:auto;">
+        Place the final render at <code>assets/video/concept-film.mp4</code>.
+        Until then this slide shows the title plate — see <code>docs/SCREENSHOT_GUIDE.md</code>.
+      </p>
+      <aside class="notes">
+        <h4>4:00. Full screen, lights down.</h4>
+        <p>Do not narrate. Do not apologise for it. Do not say "this is just a draft."</p>
+        <p>When it ends: hard cut to black, hold two full seconds of silence, then speak.
+           The silence is what makes the room turn back to you.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 3 — The reframe                                              -->
+    <!-- ================================================================== -->
+    <section id="reframe" class="is-centered">
+      <p class="fm-eyebrow">The real problem</p>
+      <p class="fm-statement">
+        This is not an agricultural problem.<br>
+        It is an <span class="fm-accent">information gap</span>.
+      </p>
+      <aside class="notes">
+        <h4>Say</h4>
+        <p>"The Kingdom does not have a shortage of farms, investment, or effort. It has a
+           shortage of timely, verified, farm-level information — and no controlled way to
+           collect it. When information arrives late, the right intention still produces the
+           wrong decision."</p>
+        <p>One sentence, then pause. Resist the urge to add a second.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 4 — What the gap costs                                       -->
+    <!-- ================================================================== -->
+    <section id="cost"
+             class="fm-scrim"
+             data-background-image="assets/images/optimized/disease-detection.jpg"
+             data-background-size="cover"
+             data-background-position="right center">
+      <p class="fm-eyebrow is-alert">What the gap costs</p>
+      <h2>Six failures, one root cause</h2>
+
+      <div class="fm-grid cols-3" style="margin-top:1rem;">
+        <div class="fm-card is-alert">
+          <h3>Detected late</h3>
+          <p>Disease spreads before anyone sees it.</p>
+        </div>
+        <div class="fm-card is-alert">
+          <h3>Water unattributed</h3>
+          <p>Consumption known in total, never by zone.</p>
+        </div>
+        <div class="fm-card is-alert">
+          <h3>Work unverified</h3>
+          <p>A task is reported complete. Nothing proves it.</p>
+        </div>
+        <div class="fm-card is-alert">
+          <h3>Hours spent walking</h3>
+          <p>Inspection time consumed by travel, not judgment.</p>
+        </div>
+        <div class="fm-card is-alert">
+          <h3>Expertise spread thin</h3>
+          <p>One agronomist, thousands of hectares.</p>
+        </div>
+        <div class="fm-card is-alert">
+          <h3>No season record</h3>
+          <p>Quality cannot be evidenced after the fact.</p>
+        </div>
+      </div>
+
+      <p class="fm-note">
+        Loss magnitude varies by crop, region, pest and season. What is not in dispute is that
+        delayed detection increases both the cost and the complexity of intervention.
+      </p>
+
+      <aside class="notes">
+        <h4>The concession that buys you the room</h4>
+        <p>Say: "We are deliberately not going to give you a headline loss figure we cannot
+           source. We would rather be the people in this room whose numbers survive checking."</p>
+        <p><strong>Do not</strong> quote the SAR 9.2bn / 1.5bn / 16–17% figures. They are not
+           locatable in public National Center for Palms and Dates material. Presenting an
+           unsourced number to a minister is the fastest way to lose the meeting.</p>
+        <p>If pressed for a number, the defensible one is the 2017 Saudi post-harvest
+           assessment: ~12.6% average date damage, 5–10% typical marketing loss.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 5 — One evidence chain                                       -->
+    <!-- ================================================================== -->
+    <section id="evidence-chain">
+      <p class="fm-eyebrow">What Farm Marshal is</p>
+      <h2>One evidence chain</h2>
+
+      <div class="fm-split is-narrow-start" style="margin-top:0.5rem;">
+        <div>
+          <ul class="fm-list">
+            <li>Satellite context</li>
+            <li>Authorized drone inspection</li>
+            <li>Ground sensors and valves</li>
+            <li>Field operator reports</li>
+            <li>Every previous season</li>
+          </ul>
+        </div>
+        <div>
+          <div class="fm-chain" style="flex-wrap:wrap;">
+            <div class="fm-chain-step is-active">Geotagged,<br>timestamped evidence</div>
+            <div class="fm-chain-step">Expert review<br>by a named specialist</div>
+            <div class="fm-chain-step">Assigned task<br>with a deadline</div>
+            <div class="fm-chain-step">Proof of<br>completion</div>
+          </div>
+          <p class="fm-lead" style="margin-top:1.2rem;">
+            The verified outcome becomes next season's baseline.
+          </p>
+        </div>
+      </div>
+
+      <aside class="notes">
+        <h4>Say</h4>
+        <p>"Farm Marshal is not a drone company and not a dashboard. It is the control and
+           evidence layer between what happens on the land and who is accountable for it."</p>
+        <h4>The critical sentence — do not cut it</h4>
+        <p>"Drones are one input. If drone flight were never approved, the platform would still
+           work — it would simply be less precise."</p>
+        <p>This removes the impression that you are here purely to extract a drone licence,
+           and makes the licence easier to grant because it stops being all-or-nothing.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 6 — Three layers                                             -->
+    <!-- ================================================================== -->
+    <section id="layers">
+      <p class="fm-eyebrow">Honest about the tools</p>
+      <h2>Three layers, three different jobs</h2>
+
+      <table class="fm-table">
+        <thead>
+          <tr>
+            <th scope="col">Layer</th>
+            <th scope="col">What it does</th>
+            <th scope="col">What it cannot do</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Layer">Satellite</td>
+            <td data-label="Does">Regional context, change detection</td>
+            <td data-label="Cannot">Resolve an individual palm</td>
+          </tr>
+          <tr>
+            <td data-label="Layer">Drone</td>
+            <td data-label="Does">Farm-level detail, on demand</td>
+            <td data-label="Cannot">Measure continuously</td>
+          </tr>
+          <tr>
+            <td data-label="Layer">Ground sensors</td>
+            <td data-label="Does">Continuous water, soil, electrical</td>
+            <td data-label="Cannot">See the whole field</td>
+          </tr>
+          <tr class="is-highlight">
+            <td data-label="Layer"><strong>Qualified expert</strong></td>
+            <td data-label="Does"><strong>Diagnosis, accountability, final approval</strong></td>
+            <td data-label="Cannot"><strong>Be everywhere at once</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <aside class="notes">
+        <h4>Say</h4>
+        <p>"We never claim drones are better than satellites. They do different jobs, and this
+           room knows it. And no layer replaces the licensed agronomist — the platform makes
+           that person's judgment reach further, and makes it traceable."</p>
+        <p>Claiming drone superiority over satellites is a credibility trap. Avoid it.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 7 — Demo: case opens                                         -->
+    <!-- ================================================================== -->
+    <section id="demo-open">
+      <p class="fm-eyebrow">Live demonstration &middot; 1 of 3</p>
+      <h2>A case opens</h2>
+
+      <div class="fm-split">
+        <div>
+          <div class="fm-chain">
+            <div class="fm-chain-step is-active">Inspect</div>
+            <div class="fm-chain-step is-active">Detect</div>
+            <div class="fm-chain-step">Diagnose</div>
+            <div class="fm-chain-step">Recommend</div>
+          </div>
+          <ul class="fm-list" style="margin-top:1.4rem;">
+            <li>A flagged zone on a mapped estate</li>
+            <li>Geotag, timestamp, altitude</li>
+            <li>Flight identifier attached to the evidence</li>
+          </ul>
+        </div>
+        <figure class="fm-figure">
+          <img src="assets/screenshots/optimized/ui-overlay.jpg"
+               alt="Inspection overlay showing a flagged zone with location metadata">
+          <figcaption>Detection overlay with capture metadata.</figcaption>
+        </figure>
+      </div>
+
+      <aside class="notes">
+        <h4>Run from local data on your own laptop.</h4>
+        <p>Never demo live against a remote server on ministry Wi-Fi. Keep the recorded
+           screen capture one keypress away.</p>
+        <h4>Say</h4>
+        <p>"Note the flight identifier. We will come back to it." — this plants the thread you
+           pull on the Interior slide.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 8 — Demo: expert review                                      -->
+    <!-- ================================================================== -->
+    <section id="demo-expert"
+             class="fm-scrim"
+             data-background-video="assets/video/expert-diagnose.mp4"
+             data-background-video-loop
+             data-background-video-muted
+             data-background-size="cover">
+      <p class="fm-eyebrow">Live demonstration &middot; 2 of 3</p>
+      <h2>A named expert takes responsibility</h2>
+
+      <div class="fm-chain" style="max-width:60%;">
+        <div class="fm-chain-step">Inspect</div>
+        <div class="fm-chain-step">Detect</div>
+        <div class="fm-chain-step is-active">Diagnose</div>
+        <div class="fm-chain-step is-active">Recommend</div>
+      </div>
+
+      <ul class="fm-list" style="margin-top:1.6rem;max-width:46ch;">
+        <li>Identity and certification verified before assignment</li>
+        <li>Crop and region specialisation matched to the case</li>
+        <li>Conflict-of-interest declared and recorded</li>
+      </ul>
+
+      <aside class="notes">
+        <h4>Say</h4>
+        <p>"The recommendation is attributable to a qualified person who is legally and
+           commercially accountable for it. AI ranks where the expert should look first.
+           It does not decide."</p>
+        <p>Expect the question "is this AI making the decisions?" — answer it here rather
+           than waiting. Appendix A3 has the detail if they push.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 9 — Demo: verified closure                                   -->
+    <!-- ================================================================== -->
+    <section id="demo-close">
+      <p class="fm-eyebrow">Live demonstration &middot; 3 of 3</p>
+      <h2>Closed against evidence, not against a phone call</h2>
+
+      <div class="fm-chain">
+        <div class="fm-chain-step">Inspect</div>
+        <div class="fm-chain-step">Detect</div>
+        <div class="fm-chain-step">Diagnose</div>
+        <div class="fm-chain-step">Recommend</div>
+        <div class="fm-chain-step is-active">Implement</div>
+        <div class="fm-chain-step is-active">Verify</div>
+        <div class="fm-chain-step is-active">Learn</div>
+      </div>
+
+      <div class="fm-phone-row" style="margin-top:1.8rem;">
+        <figure class="fm-figure">
+          <img src="assets/screenshots/optimized/app-02-assigned-tasks.jpg" alt="Assigned tasks list in the field application">
+          <figcaption>Task assigned</figcaption>
+        </figure>
+        <figure class="fm-figure">
+          <img src="assets/screenshots/optimized/app-03-gps-verification.jpg" alt="GPS arrival verification screen">
+          <figcaption>Arrival verified</figcaption>
+        </figure>
+        <figure class="fm-figure">
+          <img src="assets/screenshots/optimized/app-05-material-quantity.jpg" alt="Material and quantity recording screen">
+          <figcaption>Product and quantity</figcaption>
+        </figure>
+        <figure class="fm-figure">
+          <img src="assets/screenshots/optimized/app-06-expert-verification.png" alt="Expert verification status screen">
+          <figcaption>Result verified</figcaption>
+        </figure>
+      </div>
+
+      <aside class="notes">
+        <h4>This is the part to make them remember.</h4>
+        <p>"We do not stop at producing a PDF recommendation. We track whether it was
+           implemented, and whether it worked. Payment can then be released against evidence
+           rather than verbal confirmation."</p>
+        <p>For MEWA this is extension services. For MOI it is an audit trail. For MOD it is a
+           chain of custody. Say it once; all three hear their own version.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 10 — For Agriculture                                         -->
+    <!-- ================================================================== -->
+    <section id="track-mewa"
+             class="fm-scrim"
+             data-background-image="assets/images/optimized/drip-irrigation.jpg"
+             data-background-size="cover"
+             data-background-position="right center">
+      <p class="fm-eyebrow">For the Ministry of Environment, Water &amp; Agriculture</p>
+      <h2>Water you can account for.<br>Intervention before spread.</h2>
+
+      <table class="fm-table" style="max-width:88%;">
+        <thead>
+          <tr>
+            <th scope="col">What the Ministry gets</th>
+            <th scope="col">Mechanism</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Gets">Water visibility per zone, per season</td>
+            <td data-label="Mechanism">Irrigation checkpoints, valve telemetry, aerial anomaly detection</td>
+          </tr>
+          <tr>
+            <td data-label="Gets">Earlier plant-health intervention</td>
+            <td data-label="Mechanism">Fixed-route repeat inspection, change detection against history</td>
+          </tr>
+          <tr>
+            <td data-label="Gets">A standardised, comparable dataset</td>
+            <td data-label="Mechanism">One inspection protocol across every participating farm</td>
+          </tr>
+          <tr>
+            <td data-label="Gets">Verified land-rehabilitation progress</td>
+            <td data-label="Mechanism">Dated geotagged evidence against planned boundaries</td>
+          </tr>
+          <tr>
+            <td data-label="Gets">Extension reach to remote holdings</td>
+            <td data-label="Mechanism">Verified expert network, no travel required</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <aside class="notes">
+        <h4>Introduce the block</h4>
+        <p>"The next three slides are one for each of you. They are different on purpose."</p>
+        <h4>Say</h4>
+        <p>"Today the Ministry sets policy on irrigation efficiency but receives self-reported
+           farm data. We are offering measured data, collected to one protocol, that the farm
+           owner has a commercial reason to keep accurate — because his payments depend on it."</p>
+        <h4>The line that lands</h4>
+        <p>"We are not asking the Ministry to trust our numbers. We are asking it to define the
+           KPIs, and we will report against them."</p>
+        <p>Water outranks almost every other argument in the Kingdom. Route the benefit
+           through water whenever it is honest to do so.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 11 — For Interior                                            -->
+    <!-- ================================================================== -->
+    <section id="track-moi"
+             class="fm-scrim"
+             data-background-video="assets/video/drone-takeoff.mp4"
+             data-background-video-loop
+             data-background-video-muted
+             data-background-size="cover">
+      <p class="fm-eyebrow">For the Ministry of Interior</p>
+      <h2>Every flight registered.<br>Every pilot identified.<br>Every track retained.</h2>
+
+      <table class="fm-table" style="max-width:92%;">
+        <thead>
+          <tr>
+            <th scope="col">Control</th>
+            <th scope="col">How it is enforced</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Control">Registered airframes</td>
+            <td data-label="Enforced">No unregistered airframe can be assigned a mission</td>
+          </tr>
+          <tr>
+            <td data-label="Control">Certified, identified pilots</td>
+            <td data-label="Enforced">Operator record bound to every mission; no anonymous flight</td>
+          </tr>
+          <tr>
+            <td data-label="Control">Geofenced boundaries</td>
+            <td data-label="Enforced">A mission cannot be generated outside the authorized polygon</td>
+          </tr>
+          <tr>
+            <td data-label="Control">Per-flight authorization</td>
+            <td data-label="Enforced">A purpose, a window, an approver — not a standing permission</td>
+          </tr>
+          <tr>
+            <td data-label="Control">Complete flight logs</td>
+            <td data-label="Enforced">Takeoff, landing, track and payload retained for the authority</td>
+          </tr>
+          <tr>
+            <td data-label="Control">Controlled imagery access</td>
+            <td data-label="Enforced">Every view and export is attributable to a named account</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <aside class="notes">
+        <h4>Lead with their concern, before they raise it</h4>
+        <p>"You are being asked to approve more civilian aircraft over Saudi land. Let me tell
+           you why our answer is that this reduces your problem."</p>
+        <h4>The argument</h4>
+        <p>"The alternative to a regulated agricultural drone programme is not zero drones. It
+           is drones nobody registered. Every farm we bring into this framework moves a set of
+           flights from unknown to logged. That shrinks the noise floor you are trying to see
+           through."</p>
+        <h4>Then the credibility close</h4>
+        <p>"Our partner spent his career on your side of this table. He asked these questions
+           before you did, and this framework is the answer we gave him."</p>
+        <h4>Warning</h4>
+        <p>Confirm the exact current authorization route (GACA registration, remote-pilot
+           certification, Public Security clearance, GAMI where applicable) BEFORE naming it.
+           Describing the regulator's own process incorrectly, to the regulator, is
+           unrecoverable. If unsure, say "subject to confirmation with your teams."</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 12 — For Defense                                             -->
+    <!-- ================================================================== -->
+    <section id="track-mod"
+             class="fm-scrim"
+             data-background-image="assets/images/optimized/desert-farm.jpg"
+             data-background-size="cover">
+      <p class="fm-eyebrow">For the Ministry of Defense</p>
+      <h2>Sovereign data.<br>A localizable capability.</h2>
+
+      <div class="fm-grid cols-2" style="margin-top:0.6rem;">
+        <div class="fm-card">
+          <h3>Data residency</h3>
+          <p>Imagery and telemetry stored inside the Kingdom. No terrain imagery leaves Saudi jurisdiction.</p>
+        </div>
+        <div class="fm-card">
+          <h3>No foreign telemetry channel</h3>
+          <p>Flight and payload data do not transit a foreign manufacturer's cloud. This constrains hardware selection.</p>
+        </div>
+        <div class="fm-card">
+          <h3>Localization path</h3>
+          <p>Phase 1 uses available platforms. Phase 2 defines a Saudi-content roadmap for airframe and payload.</p>
+        </div>
+        <div class="fm-card">
+          <h3>National operator pool</h3>
+          <p>Certified Saudi remote pilots, maintenance and mission planning as a domestic skill base.</p>
+        </div>
+        <div class="fm-card">
+          <h3>Airspace discipline</h3>
+          <p>Routine civil missions flown correctly build the procedural culture that matters under pressure.</p>
+        </div>
+        <div class="fm-card is-alert">
+          <h3>Dual-use, stated openly</h3>
+          <p>Wide-area monitoring shares tooling with wide-area awareness. We raise it rather than let you find it.</p>
+        </div>
+      </div>
+
+      <aside class="notes">
+        <h4>Say</h4>
+        <p>"We will state the uncomfortable part ourselves. Wide-area aerial monitoring is
+           dual-use. That is precisely why it should be built domestically, hosted domestically,
+           and governed by a framework you write — rather than imported as a black box with a
+           foreign support contract."</p>
+        <h4>Do not</h4>
+        <p>Mention any current or regional conflict, weaponisation, or any security framing
+           beyond airspace discipline and data sovereignty. It makes the room more anxious,
+           not more supportive.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 13 — Governance                                              -->
+    <!-- ================================================================== -->
+    <section id="governance">
+      <p class="fm-eyebrow">Governance</p>
+      <h2>Who controls what</h2>
+
+      <table class="fm-table">
+        <thead>
+          <tr>
+            <th scope="col">Actor</th>
+            <th scope="col">Sees</th>
+            <th scope="col">Cannot see</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Actor">Farm owner</td>
+            <td data-label="Sees">Everything on their own estate</td>
+            <td data-label="Cannot see">Any other estate</td>
+          </tr>
+          <tr>
+            <td data-label="Actor">Expert</td>
+            <td data-label="Sees">Only the case assigned to them</td>
+            <td data-label="Cannot see">Estate identity beyond the case</td>
+          </tr>
+          <tr>
+            <td data-label="Actor">Remote pilot</td>
+            <td data-label="Sees">Only the authorized mission envelope</td>
+            <td data-label="Cannot see">Case content or expert findings</td>
+          </tr>
+          <tr>
+            <td data-label="Actor">Competent authority</td>
+            <td data-label="Sees">Flight records; farm data on a defined legal basis</td>
+            <td data-label="Cannot see">Anything without a logged basis</td>
+          </tr>
+          <tr>
+            <td data-label="Actor">Platform operator</td>
+            <td data-label="Sees">Audit metadata</td>
+            <td data-label="Cannot see">Nothing silently — every read is logged</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="fm-note">
+        Defined retention periods &middot; immutable audit log &middot;
+        AI never replaces the responsible expert's decision — it only ranks where to look first.
+      </p>
+
+      <aside class="notes">
+        <h4>Say</h4>
+        <p>"The farm owner owns the data. Access by any other party — including us — is logged
+           and requires a defined basis."</p>
+        <p>Appendix A6 covers retention, deletion and lawful access if MOI or MOD press.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 14 — Flight authorization chain                              -->
+    <!-- ================================================================== -->
+    <section id="flight-chain">
+      <p class="fm-eyebrow">Compliance</p>
+      <h2>The flight authorization chain</h2>
+
+      <div class="fm-chain" style="margin-top:1.6rem;">
+        <div class="fm-chain-step">Mission<br>request</div>
+        <div class="fm-chain-step">Boundary &amp;<br>no-fly check</div>
+        <div class="fm-chain-step">Aircraft<br>assignment</div>
+        <div class="fm-chain-step">Pilot<br>assignment</div>
+        <div class="fm-chain-step is-active">Authority<br>approval</div>
+        <div class="fm-chain-step">Geofenced<br>execution</div>
+        <div class="fm-chain-step">Log<br>submission</div>
+        <div class="fm-chain-step">Access<br>control</div>
+      </div>
+
+      <p class="fm-lead" style="margin-top:2rem;max-width:52ch;">
+        There is no step in this chain that a farm owner can skip by making a phone call.
+      </p>
+
+      <aside class="notes">
+        <h4>Say the sentence on the slide, verbatim.</h4>
+        <p>It is the single most reassuring thing an Interior representative will hear all
+           meeting, because it says the control is structural rather than procedural.</p>
+        <p>Appendix A7 holds the incident, lost-link and emergency-landing procedures.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 15 — What we are not asking for                              -->
+    <!-- ================================================================== -->
+    <section id="not-asking">
+      <p class="fm-eyebrow is-gold">Scope of the request</p>
+      <h2>What we are <em>not</em> asking for</h2>
+
+      <ul class="fm-list" style="margin-top:1rem;">
+        <li class="is-no">Not nationwide unrestricted drone access</li>
+        <li class="is-no">Not exemption from any existing regulation</li>
+        <li class="is-no">Not a sole-source national contract</li>
+        <li class="is-no">Not access to any data outside the participating farms</li>
+        <li class="is-yes">One supervised pilot, on defined sites, with defined aircraft, measured against KPIs <strong>you</strong> approve</li>
+      </ul>
+
+      <aside class="notes">
+        <h4>This slide is disproportionately effective.</h4>
+        <p>Explicitly naming what you are not asking for is what converts "let me consult
+           internally" into "send me the protocol." Do not rush it — read all five lines.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 16 — Economics                                               -->
+    <!-- ================================================================== -->
+    <section id="economics">
+      <p class="fm-eyebrow is-gold">Planning assumptions — not customer results</p>
+      <h2>Modelled economics, 1,000 hectares</h2>
+
+      <table class="fm-table" style="max-width:86%;">
+        <thead>
+          <tr>
+            <th scope="col">Scenario</th>
+            <th scope="col">Annual gross value</th>
+            <th scope="col">Service cost</th>
+            <th scope="col">Benefit&ndash;cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Scenario">Conservative</td>
+            <td class="is-num" data-label="Gross value">SAR 810,000</td>
+            <td class="is-num" data-label="Cost">SAR 600,000</td>
+            <td class="is-num" data-label="Ratio">1.35&times;</td>
+          </tr>
+          <tr class="is-highlight">
+            <td data-label="Scenario"><strong>Expected</strong></td>
+            <td class="is-num" data-label="Gross value"><strong>SAR 1,680,000</strong></td>
+            <td class="is-num" data-label="Cost"><strong>SAR 600,000</strong></td>
+            <td class="is-num" data-label="Ratio"><strong>2.80&times;</strong></td>
+          </tr>
+          <tr>
+            <td data-label="Scenario">Strong</td>
+            <td class="is-num" data-label="Gross value">SAR 2,580,000</td>
+            <td class="is-num" data-label="Cost">SAR 600,000</td>
+            <td class="is-num" data-label="Ratio">4.30&times;</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="fm-note">
+        Synthetic planning assumptions for a representative estate, not measured outcomes.
+        Our own commercial gate is a verified benefit&ndash;cost ratio of at least 2&times;.
+      </p>
+
+      <aside class="notes">
+        <h4>Say</h4>
+        <p>"These are planning assumptions, not customer results. The reason we are asking for
+           a pilot is that we would rather bring you measured numbers than argue about modelled
+           ones. Our own commercial gate is a verified benefit-cost ratio of at least two times.
+           If the pilot does not clear it, we will tell you so."</p>
+        <h4>Why this framing</h4>
+        <p>Volunteering your own kill criterion is the strongest credibility move available to a
+           first-time vendor in front of a regulator. Appendix A9 exposes every assumption.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 17 — Localization                                            -->
+    <!-- ================================================================== -->
+    <section id="localization"
+             class="fm-scrim"
+             data-background-image="assets/images/optimized/worker-drone.jpg"
+             data-background-size="cover"
+             data-background-position="right center">
+      <p class="fm-eyebrow">Localization</p>
+      <h2>What this builds in the Kingdom</h2>
+
+      <div class="fm-grid cols-3" style="margin-top:0.8rem;max-width:82%;">
+        <div class="fm-card">
+          <h3>Certified remote pilots</h3>
+          <p>Trained, licensed and employed per operational region.</p>
+        </div>
+        <div class="fm-card">
+          <h3>Field operators</h3>
+          <p>Evidence capture, ground verification, equipment handling.</p>
+        </div>
+        <div class="fm-card">
+          <h3>Agronomy reviewers</h3>
+          <p>Saudi specialists reviewing Saudi cases, building a national case history.</p>
+        </div>
+        <div class="fm-card">
+          <h3>Imagery analysts</h3>
+          <p>Data, annotation and quality assurance roles that did not previously exist locally.</p>
+        </div>
+        <div class="fm-card">
+          <h3>Maintenance</h3>
+          <p>Airframe and payload servicing held in-Kingdom rather than shipped abroad.</p>
+        </div>
+        <div class="fm-card">
+          <h3>Saudi-content roadmap</h3>
+          <p>Defined by phase, reported against, and reviewable by the authority.</p>
+        </div>
+      </div>
+
+      <p class="fm-note">
+        Headcount figures to be inserted once the pilot scope is fixed. Present only numbers you can defend.
+      </p>
+
+      <aside class="notes">
+        <h4>Discipline</h4>
+        <p>Do not invent job numbers. An unfounded employment figure in front of a ministry is
+           the same category of error as the unsourced loss figure on slide 4 — and here you have
+           no excuse, because the number depends entirely on a scope you control.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 18 — The ask                                                 -->
+    <!-- ================================================================== -->
+    <section id="the-ask">
+      <p class="fm-eyebrow">The request</p>
+      <h2>One supervised pilot</h2>
+
+      <table class="fm-table">
+        <tbody>
+          <tr>
+            <td data-label="Item"><strong>Scope</strong></td>
+            <td data-label="Proposed"><em>N</em> farms / <em>X</em> hectares in <em>[named region]</em>, one irrigation season</td>
+          </tr>
+          <tr>
+            <td data-label="Item"><strong>Aircraft</strong></td>
+            <td data-label="Proposed"><em>N</em> registered airframes, listed by type and serial</td>
+          </tr>
+          <tr>
+            <td data-label="Item"><strong>Operators</strong></td>
+            <td data-label="Proposed"><em>N</em> certified remote pilots, named, security cleared</td>
+          </tr>
+          <tr>
+            <td data-label="Item"><strong>Regulatory</strong></td>
+            <td data-label="Proposed">Mission authorization under the existing framework, exact route to be confirmed with your teams</td>
+          </tr>
+          <tr>
+            <td data-label="Item"><strong>Hosting</strong></td>
+            <td data-label="Proposed">Approved in-Kingdom environment, named</td>
+          </tr>
+          <tr class="is-highlight">
+            <td data-label="Item"><strong>KPIs</strong></td>
+            <td data-label="Proposed">Water visibility &middot; inspection time per hectare &middot; detection-to-action time &middot; verified closure rate &middot; zero airspace incidents</td>
+          </tr>
+          <tr>
+            <td data-label="Item"><strong>Reporting</strong></td>
+            <td data-label="Proposed">Monthly to a joint committee; independent agronomist review at close</td>
+          </tr>
+          <tr>
+            <td data-label="Item"><strong>Funding</strong></td>
+            <td data-label="Proposed"><em>[amount]</em>, as <em>[grant / co-funding / matched against sponsor contribution]</em></td>
+          </tr>
+          <tr>
+            <td data-label="Item"><strong>Exit</strong></td>
+            <td data-label="Proposed">Either party may end it at any point; all data and logs remain with the authority</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <aside class="notes">
+        <h4>Say</h4>
+        <p>"We are asking you to approve something small, bounded, measured, and reversible."</p>
+        <h4>Before the meeting</h4>
+        <p>Every bracketed value must be a real number. A ministry official needs to be able to
+           forward this row-for-row without rewriting it. Never be vague about money in front of
+           a ministry — it reads as either unpreparedness or evasion.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 19 — Close                                                   -->
+    <!-- ================================================================== -->
+    <section id="close"
+             class="is-centered fm-scrim is-even"
+             data-background-video="assets/video/inspection-flight.mp4"
+             data-background-video-loop
+             data-background-video-muted
+             data-background-size="cover"
+             data-background-image="assets/images/optimized/farm-aerial.jpg">
+      <p class="fm-statement" style="max-width:26ch;">
+        One farm under control.<br>
+        One decision supported by evidence.<br>
+        One model that can <span class="fm-accent">scale</span>.
+      </p>
+      <p class="fm-footnote" style="text-align:center;">
+        Farm Marshal &middot; Al Sarrani Group &times; Oriel Company
+      </p>
+
+      <aside class="notes">
+        <h4>Deliver this, then put the clicker down.</h4>
+        <p>"I do not expect a decision today. I expect a question. What is the single biggest
+           agricultural or operational headache your teams are dealing with right now — and
+           would verified field evidence have changed it?"</p>
+        <p>Then stop. Let them fill the remaining eight minutes. Everything they say is your
+           real requirements document — assign someone to write it down verbatim, in the room.</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 20 — Appendix (vertical stack)                               -->
+    <!-- ================================================================== -->
+    <section id="appendix">
+
+      <section class="is-centered">
+        <p class="fm-eyebrow">Not presented</p>
+        <h2>Appendix</h2>
+        <p class="fm-lead" style="margin-inline:auto;">
+          Navigate down, or press <strong>Esc</strong> for the slide overview.
+        </p>
+        <aside class="notes">
+          <p>Never walk into the appendix voluntarily. Jump straight to the slide that answers
+             the question asked, then come back up.</p>
+        </aside>
+      </section>
+
+      <section>
+        <p class="fm-eyebrow">A1</p>
+        <h2>Verification register</h2>
+        <div data-fm-verification></div>
+        <p class="fm-note">
+          Rendered live from <code>config/presentation.config.js</code>. Any item marked
+          <em>Blocking</em> must be resolved or removed before this deck is presented.
+        </p>
+        <aside class="notes">
+          <p>This slide exists so an unresolved claim cannot be quietly forgotten. If anything
+             is still red on the morning of the meeting, cut the claim rather than risk it.</p>
+        </aside>
+      </section>
+
+      <section>
+        <p class="fm-eyebrow">A2</p>
+        <h2>Expert vetting</h2>
+        <ul class="fm-list">
+          <li>Identity verification before any case assignment</li>
+          <li>Certification and qualification records held on file</li>
+          <li>Crop and region specialisation matched per case</li>
+          <li>Declared conflicts of interest, recorded and reviewable</li>
+          <li>Peer review: junior findings challenged by senior specialists</li>
+          <li>Rating by both platform and customer, visible in the assignment decision</li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="fm-eyebrow">A3</p>
+        <h2>What the AI does and does not do</h2>
+        <div class="fm-split">
+          <div>
+            <h3 style="color:var(--fm-green);">Does</h3>
+            <ul class="fm-list">
+              <li>Rank zones by how much they deviate from the farm's own history</li>
+              <li>Flag candidate anomalies for human attention</li>
+              <li>Improve with every validated inspection</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="color:var(--fm-alert);">Does not</h3>
+            <ul class="fm-list">
+              <li class="is-no">Issue a diagnosis</li>
+              <li class="is-no">Approve a treatment</li>
+              <li class="is-no">Close a case</li>
+              <li class="is-no">Carry legal or commercial accountability</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">
+          <p>"The first version does not depend on perfect AI diagnosis. Qualified experts remain
+             responsible. The investment is justified by documentation, transparency, faster
+             inspection and expert supervision even before AI matures."</p>
+        </aside>
+      </section>
+
+      <section>
+        <p class="fm-eyebrow">A4</p>
+        <h2>Heat, dust and salt</h2>
+        <p class="fm-lead" style="max-width:60ch;">
+          Hardware qualified for European or Egyptian conditions fails in the Gulf. This is a
+          cost line, not an afterthought.
+        </p>
+        <ul class="fm-list">
+          <li>Shielded sensor housings rated for ingress and thermal load</li>
+          <li>Camera protection against abrasive dust</li>
+          <li>Electromagnetic-induction sensing where contact sensors corrode</li>
+          <li>Maintenance intervals set for the environment, not the datasheet</li>
+        </ul>
+        <p class="fm-note">
+          Hardware suited to Gulf conditions costs more than the equivalent European deployment.
+          Service pricing reflects that, and is still cheaper than the failure it prevents.
+        </p>
+        <aside class="notes">
+          <p>Near-certain question. If the businessman or an official has been burned by imported
+             technology before, treat it as an asset — they now know what to ask, and a straight
+             answer here converts scepticism into confidence.</p>
+        </aside>
+      </section>
+
+      <section>
+        <p class="fm-eyebrow">A5</p>
+        <h2>Why not an existing drone company?</h2>
+        <table class="fm-table">
+          <thead>
+            <tr>
+              <th scope="col">Provider</th>
+              <th scope="col">Positioning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Provider">Terra Drone Arabia</td>
+              <td data-label="Positioning">Drone and geospatial services, explicit agriculture offering. Riyadh, est. 2023.</td>
+            </tr>
+            <tr>
+              <td data-label="Provider">FalconViz</td>
+              <td data-label="Positioning">KAUST-origin drone data and digitization, precision agriculture among sectors.</td>
+            </tr>
+            <tr>
+              <td data-label="Provider">KOKBA, NineTenths, Zain Drone</td>
+              <td data-label="Positioning">Equipment, integration and drone-as-a-service capability.</td>
+            </tr>
+            <tr class="is-highlight">
+              <td data-label="Provider"><strong>Farm Marshal</strong></td>
+              <td data-label="Positioning"><strong>The accountability layer above them: evidence chain, expert review, verified closure. They are execution partners, not substitutes.</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <aside class="notes">
+          <p>"They provide drone data services. We provide the layer that turns data into a
+             verified, closed work order. We would rather contract them than compete with them."</p>
+        </aside>
+      </section>
+
+      <section>
+        <p class="fm-eyebrow">A6</p>
+        <h2>Data retention, deletion and lawful access</h2>
+        <ul class="fm-list">
+          <li>Farm imagery and telemetry stored in an approved in-Kingdom environment</li>
+          <li>Retention periods defined per data class before the pilot begins</li>
+          <li>Deletion on request, subject to agreed regulatory retention</li>
+          <li>Authority access on a defined legal basis, logged like any other access</li>
+          <li>Immutable audit log covering every read, export and modification</li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="fm-eyebrow">A7</p>
+        <h2>Incident and emergency procedures</h2>
+        <ul class="fm-list">
+          <li>Lost-link procedure: defined return-to-home behaviour and holding pattern</li>
+          <li>Emergency landing: pre-identified sites within each authorized polygon</li>
+          <li>Mandatory incident report to the authority within an agreed window</li>
+          <li>Flight operations suspended pending review after any incident</li>
+          <li>Aircraft maintenance records retained and inspectable</li>
+        </ul>
+        <p class="fm-note">Documented before the first flight, not after the first incident.</p>
+      </section>
+
+      <section>
+        <p class="fm-eyebrow">A8</p>
+        <h2>Phase roadmap</h2>
+        <div class="fm-chain">
+          <div class="fm-chain-step is-active">Phase 1<br>Supervised pilot<br>one season</div>
+          <div class="fm-chain-step">Phase 2<br>Regional expansion<br>measured KPIs</div>
+          <div class="fm-chain-step">Phase 3<br>National protocol<br>Saudi-content roadmap</div>
+        </div>
+        <p class="fm-note">
+          Each phase gated on the previous phase's measured result, reviewed jointly.
+          Expansion is earned, not scheduled.
+        </p>
+      </section>
+
+      <section>
+        <p class="fm-eyebrow">A9</p>
+        <h2>Economic model — assumptions exposed</h2>
+        <table class="fm-table">
+          <thead>
+            <tr>
+              <th scope="col">Benefit source</th>
+              <th scope="col">Conservative</th>
+              <th scope="col">Expected</th>
+              <th scope="col">Strong</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Source">Inspection and travel savings</td>
+              <td class="is-num" data-label="Conservative">180,000</td>
+              <td class="is-num" data-label="Expected">270,000</td>
+              <td class="is-num" data-label="Strong">360,000</td>
+            </tr>
+            <tr>
+              <td data-label="Source">Treatment and input savings</td>
+              <td class="is-num" data-label="Conservative">90,000</td>
+              <td class="is-num" data-label="Expected">150,000</td>
+              <td class="is-num" data-label="Strong">240,000</td>
+            </tr>
+            <tr>
+              <td data-label="Source">Water and pumping savings</td>
+              <td class="is-num" data-label="Conservative">120,000</td>
+              <td class="is-num" data-label="Expected">240,000</td>
+              <td class="is-num" data-label="Strong">360,000</td>
+            </tr>
+            <tr>
+              <td data-label="Source">Crop revenue protected</td>
+              <td class="is-num" data-label="Conservative">360,000</td>
+              <td class="is-num" data-label="Expected">900,000</td>
+              <td class="is-num" data-label="Strong">1,440,000</td>
+            </tr>
+            <tr>
+              <td data-label="Source">Field-work verification</td>
+              <td class="is-num" data-label="Conservative">60,000</td>
+              <td class="is-num" data-label="Expected">120,000</td>
+              <td class="is-num" data-label="Strong">180,000</td>
+            </tr>
+            <tr class="is-highlight">
+              <td data-label="Source"><strong>Total (SAR/year)</strong></td>
+              <td class="is-num" data-label="Conservative"><strong>810,000</strong></td>
+              <td class="is-num" data-label="Expected"><strong>1,680,000</strong></td>
+              <td class="is-num" data-label="Strong"><strong>2,580,000</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="fm-note">
+          Assumed annual base: SAR 18.0m crop revenue, 3.0m inputs, 2.4m water and pumping,
+          0.6m inspection and reporting, 6.0m contracted field work. Benefits overlap and must
+          not be summed against a different baseline.
+        </p>
+      </section>
+
+      <section>
+        <p class="fm-eyebrow">A10</p>
+        <h2>What we are, and what we are not</h2>
+        <p class="fm-statement" style="font-size:1.2em;max-width:44ch;margin:0;">
+          "We are not agricultural experts, and we will never claim to be. We build the system
+          that makes qualified agronomists faster, more precise, and accountable.
+          <span class="fm-accent">The agriculture stays with the agronomists. The evidence chain is ours.</span>"
+        </p>
+        <aside class="notes">
+          <p>Rehearse this until it is automatic. It will be asked, and a confident, unhedged
+             concession here is worth more than any capability claim you could make instead.</p>
+        </aside>
+      </section>
+
+    </section>
+
+  </div>
+</div>
+
+<script src="vendor/reveal/dist/reveal.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/reveal/plugin/zoom/zoom.js"></script>
+<script src="vendor/reveal/plugin/search/search.js"></script>
+<script src="js/slides.js"></script>
+<script src="js/language.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/presentation.js"></script>
+<script>
+  window.FMPresentation.init({ rtl: false });
+</script>
+
+</body>
+</html>

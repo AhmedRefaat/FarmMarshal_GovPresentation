@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Responsive layer
+   reveal.js scales the 1920x1080 stage to fit, so most sizing is handled for
+   us. What it cannot do is reflow multi-column layouts on a narrow screen, or
+   fix the layouts that break on a 4:3 projector. That is this file's job.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   4:3 and other short/wide projectors
+   A 1920x1080 stage letterboxed into 4:3 loses vertical room, so tighten the
+   gutters rather than let content collide with the frame edge.
+   -------------------------------------------------------------------------- */
+
+@media (max-aspect-ratio: 3 / 2) {
+  :root { --fm-gutter: 2.6rem; }
+
+  .reveal .slides section { padding: var(--fm-gutter) calc(var(--fm-gutter) * 1.1); }
+  .fm-split { gap: 2.2rem; }
+  .fm-grid { gap: 1rem; }
+  .fm-card { padding: 1.15rem 1.3rem; }
+  .fm-statement { font-size: 1.5em; }
+}
+
+/* --------------------------------------------------------------------------
+   Tablet and small laptop
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .fm-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+  .fm-phone-row .fm-figure { max-width: 30%; }
+}
+
+/* --------------------------------------------------------------------------
+   Phone / very narrow — reviewers will open the link on a handset
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 720px) {
+  :root { --fm-gutter: 1.5rem; }
+
+  .fm-split,
+  .fm-split.is-narrow-start,
+  .fm-split.is-narrow-end {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .fm-grid.cols-2,
+  .fm-grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .fm-chain { flex-direction: column; }
+  [dir='rtl'] .fm-chain { flex-direction: column; }
+  .fm-chain-step { min-width: 0; }
+
+  .fm-phone-row { flex-wrap: wrap; }
+  .fm-phone-row .fm-figure { max-width: 46%; }
+
+  .fm-statement { font-size: 1.3em; max-width: none; }
+  .fm-lead { max-width: none; }
+
+  .fm-footnote { position: static; margin-top: 1.2rem; }
+
+  /* Tables become stacked definition rows rather than a horizontal scroll. */
+  .reveal table.fm-table,
+  .reveal table.fm-table tbody,
+  .reveal table.fm-table tr,
+  .reveal table.fm-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .reveal table.fm-table thead { display: none; }
+
+  .reveal table.fm-table tr {
+    border: 1px solid var(--fm-line);
+    border-radius: var(--fm-radius);
+    margin-bottom: 0.9rem;
+    padding: 0.4rem 0;
+  }
+
+  .reveal table.fm-table td { border-bottom: none; padding: 0.5rem 1rem; }
+
+  .reveal table.fm-table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.8em;
+    color: var(--fm-green);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+
+  .reveal table.fm-table td.is-num { text-align: start; }
+}
+
+/* --------------------------------------------------------------------------
+   Landing / login pages — these are normal documents, not reveal stages, so
+   they need their own responsive rules.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 720px) {
+  .fm-page { padding: 2rem 1.25rem; }
+  .fm-lang-grid { grid-template-columns: 1fr; }
+  .fm-page-title { font-size: 2rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Very short viewports (projector letterboxing, browser chrome on laptops)
+   -------------------------------------------------------------------------- */
+
+@media (max-height: 620px) {
+  .fm-classification { font-size: 9px; padding: 3px 0 2px; }
+  .fm-footnote { bottom: 1.2rem; font-size: 0.34em; }
+}
+
+/* --------------------------------------------------------------------------
+   High contrast / forced colors
+   -------------------------------------------------------------------------- */
+
+@media (forced-colors: active) {
+  .fm-card,
+  .fm-chain-step,
+  .fm-figure,
+  .fm-badge {
+    border: 1px solid CanvasText;
+  }
+
+  .fm-scrim::after { display: none; }
+}

@@ -1,0 +1,34 @@
+/* ==========================================================================
+   English / LTR layer
+   Kept as a separate file so the two language decks load a symmetric set of
+   stylesheets and any future divergence has an obvious home.
+   ========================================================================== */
+
+[dir='ltr'] .reveal,
+[dir='ltr'] body {
+  font-family: var(--fm-font-en);
+}
+
+/* Tighter tracking on large display type; Latin headlines need it, Arabic must
+   never have it (see arabic.css). */
+[dir='ltr'] .reveal h1 { letter-spacing: -0.022em; }
+[dir='ltr'] .reveal h2 { letter-spacing: -0.016em; }
+[dir='ltr'] .reveal h3 { letter-spacing: -0.008em; }
+
+[dir='ltr'] .fm-statement { letter-spacing: -0.018em; }
+
+/* Tabular figures everywhere a number is compared against another number. */
+[dir='ltr'] .fm-stat,
+[dir='ltr'] .reveal td.is-num,
+[dir='ltr'] .fm-timer {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Arabic fragments inside English text (brand name, quoted script) need the
+   Arabic face or they fall back to a system font mid-sentence. */
+[dir='ltr'] .fm-arabic {
+  font-family: var(--fm-font-ar);
+  unicode-bidi: isolate;
+  direction: rtl;
+  line-height: 1.7;
+}

@@ -1,0 +1,48 @@
+Copyright (c) 2026 Al Sarrani Group and Oriel Company.
+All rights reserved.
+
+PROPRIETARY AND CONFIDENTIAL
+
+This repository contains a confidential business proposal prepared for
+presentation to government ministries of the Kingdom of Saudi Arabia. It is not
+open source and is not licensed for redistribution.
+
+No permission is granted to copy, publish, distribute, sublicense, or disclose
+this material or any part of it, in any medium, without prior written
+authorisation from both named parties above.
+
+Recipients are reminded that the access gate included in this project is a
+deterrent, not a security control. See docs/SECURITY_LIMITATIONS.md.
+
+--------------------------------------------------------------------------------
+THIRD-PARTY COMPONENTS
+
+This project bundles the following independently licensed components. Their
+licenses apply to those components only and are not affected by the terms above.
+
+  reveal.js 5.2.1
+  MIT License. Copyright (c) 2011-2024 Hakim El Hattab and reveal.js contributors.
+  https://github.com/hakimel/reveal.js
+  Vendored in vendor/reveal/.
+
+  IBM Plex Sans Arabic
+  SIL Open Font License 1.1. Copyright (c) 2017 IBM Corp.
+  https://github.com/IBM/plex
+  Vendored in assets/fonts/.
+
+  Inter
+  SIL Open Font License 1.1. Copyright (c) 2016 The Inter Project Authors.
+  https://github.com/rsms/inter
+  Vendored in assets/fonts/.
+
+  sharp
+  Apache License 2.0. Copyright 2013 Lovell Fuller and contributors.
+  Build-time dependency only; not distributed with the presentation.
+
+--------------------------------------------------------------------------------
+MEDIA
+
+Video, imagery and application screenshots in assets/ are the property of the
+copyright holders named above and are not covered by any third-party license.
+They depict a proposed concept. They are not documentary records of a deployed
+system and must not be presented as such.

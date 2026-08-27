@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <title>Farm Marshal — Ministerial Presentation</title>
+
+  <link rel="icon" href="assets/icons/drone.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/deck-builder.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="fm-body" dir="ltr">
+
+  <div class="fm-classification-static" id="classification">
+    Confidential — for ministerial review
+  </div>
+
+  <main class="fm-page">
+    <div class="fm-page-inner">
+
+      <img class="fm-page-mark" src="assets/icons/drone.png" alt="" aria-hidden="true">
+
+      <p class="fm-page-eyebrow">Al Sarrani Group &times; Oriel Company</p>
+
+      <h1 class="fm-page-title">Farm Marshal</h1>
+      <p class="fm-page-title-ar" lang="ar" dir="rtl">فارم مارشال</p>
+
+      <p class="fm-page-sub">
+        From Observation to Evidence &middot; A supervised pilot proposal<br>
+        <span lang="ar" dir="rtl" style="font-family: var(--fm-font-ar);">من الملاحظة إلى الدليل &middot; مقترح تجربة تشغيلية خاضعة للإشراف</span>
+      </p>
+
+      <nav class="fm-lang-grid" aria-label="Choose presentation language">
+        <a class="fm-lang-card" href="presentation-ar.html" data-lang="ar" hreflang="ar">
+          <span class="fm-lang-name is-ar" lang="ar" dir="rtl">العربية</span>
+          <span class="fm-lang-meta is-ar" lang="ar" dir="rtl">العرض التقديمي بالعربية</span>
+        </a>
+        <a class="fm-lang-card" href="presentation-en.html" data-lang="en" hreflang="en">
+          <span class="fm-lang-name">English</span>
+          <span class="fm-lang-meta">Presentation in English</span>
+        </a>
+      </nav>
+
+      <p class="fm-deck-state" id="deck-state">
+        <span id="deck-state-text">Showing the full deck.</span>
+        <a href="config.html">Choose slides</a>
+      </p>
+
+      <div class="fm-message is-info" id="offline-note" hidden>
+        Running from a local copy. The access gate is not applied offline &mdash;
+        physical control of this media is the only protection.
+      </div>
+
+      <p class="fm-disclosure">
+        <strong>Before sharing this link:</strong> this is a static site. Anything published
+        here is readable by anyone who has the address. Do not add farm identities,
+        site coordinates, or commercial figures to the public build. See
+        <code>docs/SECURITY_LIMITATIONS.md</code>.
+      </p>
+
+    </div>
+  </main>
+
+  <footer class="fm-page-footer">
+    <p>
+      Ministry of Environment, Water &amp; Agriculture &middot; Ministry of Interior &middot; Ministry of Defense
+    </p>
+    <p id="build-stamp"></p>
+  </footer>
+
+  <script src="config/presentation.config.js"></script>
+  <script src="config/auth.config.js"></script>
+  <script src="config/slide-index.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/slides.js"></script>
+  <script src="js/language.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      // Remember the last chosen language and reflect it as the primary action.
+      var preferred = window.FMLanguage.get();
+      if (preferred) {
+        var card = document.querySelector('.fm-lang-card[data-lang="' + preferred + '"]');
+        if (card) card.style.borderColor = 'var(--fm-green)';
+      }
+
+      Array.prototype.forEach.call(document.querySelectorAll('.fm-lang-card'), function (card) {
+        card.addEventListener('click', function () {
+          window.FMLanguage.set(card.getAttribute('data-lang'));
+        });
+      });
+
+      // A saved selection is invisible until the deck is already running, which
+      // is too late to notice. Say it here, and carry it into the deck links.
+      (function reflectSelection() {
+        var selection = window.FMSlides.current();
+        var total = window.FMSlides.allKeys().length;
+        var text = document.getElementById('deck-state-text');
+
+        if (!selection.keys || !selection.keys.length) {
+          text.textContent = 'Showing the full deck — all ' + total + ' slides.';
+          return;
+        }
+
+        var preset = selection.preset && window.FMSlides.preset(selection.preset);
+        text.textContent = 'Showing ' + selection.keys.length + ' of ' + total + ' slides' +
+          (preset ? ' · ' + preset.en : '') + '.';
+        document.getElementById('deck-state').classList.add('is-custom');
+
+        Array.prototype.forEach.call(document.querySelectorAll('.fm-lang-card'), function (card) {
+          var file = card.getAttribute('href');
+          card.setAttribute('href', window.FMSlides.link(file, selection.keys));
+        });
+      })();
+
+      if (window.FM.isOffline()) {
+        document.getElementById('offline-note').hidden = false;
+      }
+
+      var stamp = document.getElementById('build-stamp');
+      stamp.textContent = window.FMAuth.isEnabled()
+        ? 'Access gate active.'
+        : 'Access gate inactive — this build is open to anyone with the link.';
+    })();
+  </script>
+
+</body>
+</html>

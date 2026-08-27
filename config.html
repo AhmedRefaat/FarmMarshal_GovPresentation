@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <title>Deck builder — Farm Marshal</title>
+
+  <link rel="icon" href="assets/icons/drone.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/deck-builder.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <script src="config/presentation.config.js"></script>
+  <script src="config/auth.config.js"></script>
+  <script src="config/slide-index.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    if (!window.FMAuth.requireSession()) {
+      document.documentElement.style.visibility = 'hidden';
+    }
+  </script>
+</head>
+<body class="fm-body">
+
+  <div class="fm-classification-static" id="classification">
+    Confidential — for ministerial review
+  </div>
+
+  <main class="fm-builder">
+
+    <header class="fm-builder-head">
+      <p class="fm-page-eyebrow">Farm Marshal &middot; presenter tool</p>
+      <h1>Deck builder</h1>
+      <p>
+        Choose which slides the presentation shows. Both language decks follow the
+        same selection, and so does a PDF export. Nothing here changes the deck
+        itself &mdash; unselected slides are simply not loaded, so the slide count
+        and navigation match what is on screen.
+      </p>
+    </header>
+
+    <h2>Start from a preset</h2>
+    <div class="fm-preset-grid" id="presets"></div>
+
+    <h2>Or choose slide by slide</h2>
+    <div id="slide-list"></div>
+
+    <div class="fm-share">
+      <input type="text" id="share-link" readonly spellcheck="false"
+             aria-label="Link carrying this selection">
+      <button type="button" class="fm-btn" id="copy-link">Copy link</button>
+    </div>
+
+    <p class="fm-builder-note">
+      The selection is remembered in this browser. The link above carries it to
+      another machine or a USB copy &mdash; useful if someone else is driving the
+      screen. To force the full deck regardless of what is saved, open the deck
+      with <code>?slides=all</code>.
+    </p>
+
+    <div class="fm-builder-bar">
+      <div class="fm-builder-count" id="count">
+        <span id="count-text">30 of 30 slides</span>
+        <small id="count-note">Full deck</small>
+      </div>
+      <button type="button" class="fm-btn is-quiet" id="reset">Reset to full deck</button>
+      <a class="fm-btn" href="index.html">Back</a>
+      <a class="fm-btn" id="open-ar" href="presentation-ar.html" lang="ar">افتح العربية</a>
+      <a class="fm-btn is-primary" id="open-en" href="presentation-en.html">Open English deck</a>
+    </div>
+
+  </main>
+
+  <script src="js/slides.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      var index = window.FMSlides.index();
+      var slides = index.slides;
+      var selected = {};
+
+      // Start from whatever is in force: a link, then a saved choice, then all.
+      (function initialise() {
+        var current = window.FMSlides.current();
+        var keys = current.keys || window.FMSlides.allKeys();
+        keys.forEach(function (k) { selected[k] = true; });
+      })();
+
+      var listEl = document.getElementById('slide-list');
+      var presetsEl = document.getElementById('presets');
+      var countText = document.getElementById('count-text');
+      var countNote = document.getElementById('count-note');
+      var shareInput = document.getElementById('share-link');
+
+      function selectedKeys() {
+        return slides.map(function (s) { return s.key; }).filter(function (k) { return selected[k]; });
+      }
+
+      function isFullDeck(keys) {
+        return keys.length === slides.length;
+      }
+
+      /* --- rendering -------------------------------------------------------- */
+
+      function groupLabel(id) {
+        var found = null;
+        index.groups.forEach(function (g) { if (g.id === id) found = g; });
+        return found || { id: id, en: id, ar: id };
+      }
+
+      function renderList() {
+        listEl.textContent = '';
+        var currentGroup = '\u0000';
+        var container = null;
+
+        slides.forEach(function (slide) {
+          if (slide.group !== currentGroup) {
+            currentGroup = slide.group;
+            container = document.createElement('div');
+            container.className = 'fm-slide-group';
+
+            if (slide.group) {
+              var label = groupLabel(slide.group);
+              var head = document.createElement('div');
+              head.className = 'fm-slide-group-head';
+
+              var name = document.createElement('span');
+              name.textContent = label.en + ' · ' + label.ar;
+              head.appendChild(name);
+
+              var toggle = document.createElement('button');
+              toggle.type = 'button';
+              toggle.className = 'fm-btn is-quiet';
+              toggle.textContent = 'Toggle all';
+              toggle.addEventListener('click', function () {
+                var members = slides.filter(function (s) { return s.group === slide.group; });
+                var anyOff = members.some(function (s) { return !selected[s.key]; });
+                members.forEach(function (s) { selected[s.key] = anyOff; });
+                renderList();
+                refresh();
+              });
+              head.appendChild(toggle);
+              container.appendChild(head);
+            }
+            listEl.appendChild(container);
+          }
+
+          var row = document.createElement('label');
+          row.className = 'fm-slide-row' + (selected[slide.key] ? '' : ' is-off');
+
+          var box = document.createElement('input');
+          box.type = 'checkbox';
+          box.checked = !!selected[slide.key];
+          box.addEventListener('change', function () {
+            selected[slide.key] = box.checked;
+            row.classList.toggle('is-off', !box.checked);
+            refresh();
+          });
+
+          var text = document.createElement('span');
+          text.className = 'fm-slide-text';
+
+          var en = document.createElement('span');
+          en.className = 'fm-slide-en';
+          en.textContent = slide.en;
+
+          var ar = document.createElement('span');
+          ar.className = 'fm-slide-ar';
+          ar.setAttribute('lang', 'ar');
+          ar.setAttribute('dir', 'rtl');
+          ar.textContent = slide.ar;
+
+          var key = document.createElement('span');
+          key.className = 'fm-slide-key';
+          key.textContent = slide.key;
+
+          text.appendChild(en);
+          text.appendChild(ar);
+          text.appendChild(key);
+          row.appendChild(box);
+          row.appendChild(text);
+          container.appendChild(row);
+        });
+      }
+
+      function renderPresets() {
+        presetsEl.textContent = '';
+        window.FMSlides.presets().forEach(function (preset) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'fm-preset';
+          btn.setAttribute('data-preset', preset.id);
+          btn.setAttribute('aria-pressed', 'false');
+
+          var name = document.createElement('span');
+          name.className = 'fm-preset-name';
+          name.textContent = preset.en;
+
+          var nameAr = document.createElement('span');
+          nameAr.className = 'fm-preset-name-ar';
+          nameAr.setAttribute('lang', 'ar');
+          nameAr.setAttribute('dir', 'rtl');
+          nameAr.textContent = preset.ar;
+
+          var note = document.createElement('span');
+          note.className = 'fm-preset-note';
+          note.textContent = preset.noteEn || '';
+
+          btn.appendChild(name);
+          btn.appendChild(nameAr);
+          btn.appendChild(note);
+
+          btn.addEventListener('click', function () {
+            selected = {};
+            var keys = preset.slides ? window.FMSlides.clean(preset.slides) : window.FMSlides.allKeys();
+            keys.forEach(function (k) { selected[k] = true; });
+            renderList();
+            refresh();
+          });
+
+          presetsEl.appendChild(btn);
+        });
+      }
+
+      /* --- state ------------------------------------------------------------ */
+
+      function refresh() {
+        var keys = selectedKeys();
+        var full = isFullDeck(keys);
+        var preset = window.FMSlides.matchPreset(keys);
+
+        countText.textContent = keys.length + ' of ' + slides.length + ' slides';
+
+        if (!keys.length) {
+          countNote.textContent = 'Nothing selected — the deck will ignore this and show everything.';
+        } else if (full) {
+          countNote.textContent = 'Full deck';
+        } else if (preset) {
+          countNote.textContent = 'Matches preset: ' + (window.FMSlides.preset(preset) || {}).en;
+        } else {
+          countNote.textContent = 'Custom selection';
+        }
+
+        Array.prototype.forEach.call(presetsEl.children, function (btn) {
+          btn.setAttribute('aria-pressed', String(btn.getAttribute('data-preset') === preset));
+        });
+
+        // An empty or complete selection is stored as "no selection" so the deck
+        // opens normally rather than carrying a meaningless filter around.
+        var store = !keys.length || full ? null : keys;
+        window.FMSlides.save(store, preset);
+
+        var enHref = window.FMSlides.link('presentation-en.html', store);
+        var arHref = window.FMSlides.link('presentation-ar.html', store);
+        document.getElementById('open-en').setAttribute('href', enHref);
+        document.getElementById('open-ar').setAttribute('href', arHref);
+
+        var base = location.href.replace(/[^/]*$/, '');
+        shareInput.value = base + enHref;
+      }
+
+      document.getElementById('reset').addEventListener('click', function () {
+        selected = {};
+        window.FMSlides.allKeys().forEach(function (k) { selected[k] = true; });
+        window.FMSlides.clear();
+        renderList();
+        refresh();
+      });
+
+      document.getElementById('copy-link').addEventListener('click', function (event) {
+        var btn = event.currentTarget;
+        shareInput.select();
+
+        var done = function () {
+          btn.textContent = 'Copied';
+          setTimeout(function () { btn.textContent = 'Copy link'; }, 1800);
+        };
+
+        // navigator.clipboard is unavailable over file:// in some browsers; the
+        // text is selected either way so Ctrl+C always works.
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(shareInput.value).then(done, function () {});
+        } else {
+          done();
+        }
+      });
+
+      renderPresets();
+      renderList();
+      refresh();
+    })();
+  </script>
+
+</body>
+</html>

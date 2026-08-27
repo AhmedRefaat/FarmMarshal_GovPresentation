@@ -1,0 +1,20 @@
+# Normalise text files, so a Windows checkout and a Linux CI runner agree.
+* text=auto eol=lf
+
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary assets — never diff, never normalise.
+#
+# NOTE: deliberately NOT tracked with Git LFS. GitHub Pages does not serve LFS
+# objects; it serves the pointer file, which produces a silently broken video
+# player with no error message. Keep media as ordinary blobs, or host it
+# elsewhere. See docs/DEPLOYMENT.md.
+*.mp4  binary
+*.mov  binary
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.webp binary
+*.woff2 binary
+*.pdf  binary

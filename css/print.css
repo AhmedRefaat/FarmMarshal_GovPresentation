@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Print / PDF export
+   Activated by reveal.js when the URL carries ?print-pdf.
+   Goal: a PDF that reads as a leave-behind document, not a screenshot of a
+   dark deck. Ministry printers are usually monochrome, so the export inverts
+   to a light ground and drops the video slides to poster frames.
+   ========================================================================== */
+
+@media print {
+  :root {
+    --fm-deep: #ffffff;
+    --fm-deep-2: #ffffff;
+    --fm-panel: #f4f1ea;
+    --fm-line: #c9c2b2;
+    --fm-sand: #3a352b;
+    --fm-sand-dim: #5f594c;
+    --fm-white: #14110c;
+    --fm-green: #14603f;
+    --fm-gold: #7a6114;
+    --fm-alert: #96401f;
+  }
+
+  html,
+  body,
+  .reveal,
+  .reveal .slides section {
+    background: #fff !important;
+    color: #14110c !important;
+  }
+
+  .reveal .slides section {
+    padding: 2.4rem 3rem !important;
+  }
+
+  /* Video backgrounds cannot print; show the poster image instead. */
+  .reveal video,
+  .reveal .slide-background video {
+    display: none !important;
+  }
+
+  .reveal .slide-background {
+    background-color: #fff !important;
+  }
+
+  .reveal .slide-background .slide-background-content {
+    opacity: 0.16 !important;
+    filter: grayscale(1);
+  }
+
+  /* Chrome that has no meaning on paper. */
+  .fm-timer,
+  .fm-skip-link,
+  .reveal .controls,
+  .reveal .progress,
+  .fm-lang-switch,
+  .fm-print-hide {
+    display: none !important;
+  }
+
+  /* Keep the classification marking — it is the reason the PDF is controlled. */
+  .fm-classification {
+    position: static !important;
+    background: transparent !important;
+    border-bottom: 1px solid #c9c2b2 !important;
+    color: #5f594c !important;
+  }
+
+  .fm-scrim::after {
+    display: none !important;
+  }
+
+  .fm-card {
+    background: #f4f1ea !important;
+    border-color: #c9c2b2 !important;
+    break-inside: avoid;
+  }
+
+  .reveal table.fm-table th,
+  .reveal table.fm-table td {
+    border-bottom-color: #c9c2b2 !important;
+  }
+
+  .reveal table.fm-table tr.is-highlight td {
+    background: #e8f0ea !important;
+  }
+
+  .fm-chain-step {
+    background: #f4f1ea !important;
+    border-color: #c9c2b2 !important;
+  }
+
+  .fm-chain-step.is-active {
+    background: #e0ece5 !important;
+    border-color: #14603f !important;
+  }
+
+  /* Speaker notes are printed on the facing page by reveal's pdf export when
+     ?print-pdf&showNotes=separate-page is used. Style them for reading. */
+  .reveal .speaker-notes-pdf {
+    font-family: var(--fm-font-en);
+    font-size: 13pt;
+    line-height: 1.55;
+    color: #14110c;
+    padding: 2.5rem 3rem;
+  }
+
+  .reveal .speaker-notes-pdf h4 {
+    color: #14603f;
+    margin-top: 1.4em;
+  }
+
+  /* Print URLs behind links so a paper copy is still actionable. */
+  .reveal a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.75em;
+    color: #5f594c;
+    word-break: break-all;
+  }
+
+  @page {
+    size: 1920px 1080px;
+    margin: 0;
+  }
+}

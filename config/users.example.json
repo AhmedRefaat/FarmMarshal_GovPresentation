@@ -1,0 +1,35 @@
+{
+  "_comment": [
+    "Copy this file to config/users.json, edit the entries, then run:",
+    "  npm run create-user",
+    "which regenerates config/auth.config.js (the file the browser actually reads).",
+    "",
+    "Never commit config/users.json — it is gitignored. Only auth.config.js, which",
+    "contains salted hashes rather than passphrases, is safe to publish.",
+    "",
+    "IMPORTANT: read docs/SECURITY_LIMITATIONS.md before relying on this. A static",
+    "site cannot enforce authentication. This gate deters casual link-sharing; it",
+    "does not protect the content from anyone who opens developer tools."
+  ],
+  "iterations": 310000,
+  "users": [
+    {
+      "id": "mewa",
+      "labelEn": "MEWA reviewer",
+      "labelAr": "مراجع وزارة البيئة والمياه والزراعة",
+      "passphrase": "replace-me-with-a-long-passphrase"
+    },
+    {
+      "id": "moi",
+      "labelEn": "MOI reviewer",
+      "labelAr": "مراجع وزارة الداخلية",
+      "passphrase": "replace-me-with-a-long-passphrase"
+    },
+    {
+      "id": "mod",
+      "labelEn": "MOD reviewer",
+      "labelAr": "مراجع وزارة الدفاع",
+      "passphrase": "replace-me-with-a-long-passphrase"
+    }
+  ]
+}

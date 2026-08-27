@@ -1,0 +1,505 @@
+/* ==========================================================================
+   Farm Marshal — core theme
+   Dark, restrained, sand-and-green. Built to survive a badly-calibrated
+   projector: high contrast, no thin light-on-light text, nothing critical
+   in the outer 5% of the frame.
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --fm-deep: #070d0a;
+  --fm-deep-2: #0d1712;
+  --fm-panel: #12201a;
+  --fm-line: #24382c;
+  --fm-sand: #e7dcc6;
+  --fm-sand-dim: #b9ae98;
+  --fm-green: #2e9e6b;
+  --fm-green-dark: #1c6344;
+  --fm-gold: #c9a227;
+  --fm-alert: #d2683c;
+  --fm-white: #f6f3ec;
+
+  /* Type */
+  --fm-font-en: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fm-font-ar: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+
+  /* Rhythm */
+  --fm-gutter: 4rem;
+  --fm-radius: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   Reveal shell
+   -------------------------------------------------------------------------- */
+
+/* reveal.js puts .reveal-viewport on <body> and sets background-color:#fff on
+   it. That selector (0,1,0) outranks a bare `body` (0,0,1), so the deck would
+   render cream text on white on every slide without its own background image.
+   body.reveal-viewport (0,1,1) takes it back. */
+html,
+body,
+body.reveal-viewport {
+  background: var(--fm-deep);
+  color: var(--fm-white);
+}
+
+.reveal {
+  font-family: var(--fm-font-en);
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--fm-white);
+  letter-spacing: 0.005em;
+}
+
+.reveal .slides {
+  text-align: start;
+}
+
+.reveal .slides section {
+  height: 100%;
+  padding: var(--fm-gutter) calc(var(--fm-gutter) * 1.4);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal .slides section.is-centered {
+  align-items: center;
+  text-align: center;
+}
+
+/* Headings ---------------------------------------------------------------- */
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  color: var(--fm-white);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  text-shadow: none;
+}
+
+.reveal h1 { font-size: 2.15em; }
+.reveal h2 { font-size: 1.55em; }
+.reveal h3 { font-size: 1.1em; }
+
+.reveal h2 .fm-accent,
+.reveal h1 .fm-accent {
+  color: var(--fm-green);
+}
+
+.reveal p {
+  line-height: 1.5;
+  margin: 0 0 0.7em;
+}
+
+.reveal strong { color: var(--fm-white); font-weight: 600; }
+.reveal em { color: var(--fm-sand); font-style: italic; }
+
+/* --------------------------------------------------------------------------
+   Slide furniture
+   -------------------------------------------------------------------------- */
+
+.fm-eyebrow {
+  font-size: 0.5em;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fm-green);
+  margin: 0 0 1.1rem;
+}
+
+.fm-eyebrow.is-alert { color: var(--fm-alert); }
+.fm-eyebrow.is-gold { color: var(--fm-gold); }
+
+.fm-lead {
+  font-size: 0.82em;
+  color: var(--fm-sand);
+  max-width: 34ch;
+  line-height: 1.45;
+}
+
+.fm-statement {
+  font-size: 1.75em;
+  font-weight: 600;
+  line-height: 1.25;
+  max-width: 22ch;
+  margin: 0 auto;
+}
+
+.fm-note {
+  font-size: 0.46em;
+  color: var(--fm-sand-dim);
+  line-height: 1.5;
+  margin-top: 1.4rem;
+  max-width: 70ch;
+}
+
+/* Specificity is deliberate: reveal.css sets position:relative on slide
+   children, which would otherwise drop the footnote into the flex flow and
+   collide it with the body copy above. */
+.reveal .slides section .fm-footnote {
+  position: absolute;
+  bottom: 2.2rem;
+  inset-inline-start: calc(var(--fm-gutter) * 1.4);
+  inset-inline-end: calc(var(--fm-gutter) * 1.4);
+  font-size: 0.38em;
+  color: var(--fm-sand-dim);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Two-column split -------------------------------------------------------- */
+
+.fm-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.fm-split.is-narrow-start { grid-template-columns: 0.85fr 1.15fr; }
+.fm-split.is-narrow-end { grid-template-columns: 1.15fr 0.85fr; }
+
+/* Card grid --------------------------------------------------------------- */
+
+.fm-grid {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.fm-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.fm-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+.fm-card {
+  background: var(--fm-panel);
+  border: 1px solid var(--fm-line);
+  border-radius: var(--fm-radius);
+  padding: 1.5rem 1.7rem;
+}
+
+.fm-card h3 {
+  font-size: 0.62em;
+  color: var(--fm-green);
+  margin: 0 0 0.45em;
+  letter-spacing: 0.01em;
+}
+
+.fm-card p {
+  font-size: 0.52em;
+  color: var(--fm-sand);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.fm-card.is-alert { border-color: rgba(210, 104, 60, 0.5); }
+.fm-card.is-alert h3 { color: var(--fm-alert); }
+
+/* Tables ------------------------------------------------------------------ */
+
+.reveal table.fm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.5em;
+  margin: 0;
+}
+
+.reveal table.fm-table th,
+.reveal table.fm-table td {
+  padding: 0.78rem 1.05rem;
+  border-bottom: 1px solid var(--fm-line);
+  text-align: start;
+  vertical-align: top;
+  line-height: 1.45;
+}
+
+.reveal table.fm-table thead th {
+  color: var(--fm-green);
+  font-weight: 600;
+  font-size: 0.86em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom-color: var(--fm-green-dark);
+}
+
+.reveal table.fm-table tbody tr:last-child td { border-bottom: none; }
+.reveal table.fm-table td.is-num { text-align: end; font-variant-numeric: tabular-nums; }
+.reveal table.fm-table tr.is-highlight td { background: rgba(46, 158, 107, 0.11); }
+
+/* Lists ------------------------------------------------------------------- */
+
+.reveal ul.fm-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.56em;
+}
+
+.reveal ul.fm-list li {
+  position: relative;
+  padding-inline-start: 2.1rem;
+  margin-bottom: 1.05rem;
+  line-height: 1.45;
+  color: var(--fm-sand);
+}
+
+.reveal ul.fm-list li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.55em;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 2px;
+  background: var(--fm-green);
+}
+
+.reveal ul.fm-list li.is-no::before { background: var(--fm-alert); }
+.reveal ul.fm-list li.is-yes::before { background: var(--fm-green); box-shadow: 0 0 0 5px rgba(46, 158, 107, 0.18); }
+
+/* Pipeline / chain -------------------------------------------------------- */
+
+.fm-chain {
+  display: flex;
+  align-items: stretch;
+  gap: 0.55rem;
+  margin: 1.6rem 0;
+  flex-wrap: wrap;
+}
+
+.fm-chain-step {
+  flex: 1 1 0;
+  min-width: 8.5rem;
+  background: var(--fm-panel);
+  border: 1px solid var(--fm-line);
+  border-radius: var(--fm-radius);
+  padding: 1rem 0.7rem;
+  text-align: center;
+  font-size: 0.42em;
+  line-height: 1.35;
+  color: var(--fm-sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fm-chain-step.is-active {
+  border-color: var(--fm-green);
+  background: rgba(46, 158, 107, 0.14);
+  color: var(--fm-white);
+  font-weight: 600;
+}
+
+/* Stat block -------------------------------------------------------------- */
+
+.fm-stat {
+  font-size: 2.3em;
+  font-weight: 700;
+  color: var(--fm-green);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.fm-stat-label {
+  font-size: 0.46em;
+  color: var(--fm-sand-dim);
+  margin-top: 0.6rem;
+  line-height: 1.4;
+}
+
+/* Media ------------------------------------------------------------------- */
+
+.fm-figure {
+  margin: 0;
+  border-radius: var(--fm-radius);
+  overflow: hidden;
+  border: 1px solid var(--fm-line);
+  background: var(--fm-deep-2);
+}
+
+.fm-figure img,
+.fm-figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.fm-figure figcaption {
+  font-size: 0.36em;
+  color: var(--fm-sand-dim);
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--fm-line);
+  line-height: 1.4;
+}
+
+.fm-phone-row {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.fm-phone-row .fm-figure { flex: 1 1 0; max-width: 22%; }
+
+/* Background scrim so text stays readable over video/imagery --------------- */
+
+.fm-scrim::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(7, 13, 10, 0.94) 0%, rgba(7, 13, 10, 0.78) 42%, rgba(7, 13, 10, 0.34) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fm-scrim.is-even::after {
+  background: linear-gradient(180deg, rgba(7, 13, 10, 0.55) 0%, rgba(7, 13, 10, 0.86) 100%);
+}
+
+.fm-scrim > * { position: relative; z-index: 1; }
+
+/* Badges ------------------------------------------------------------------ */
+
+.fm-badge {
+  display: inline-block;
+  font-size: 0.36em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--fm-line);
+  color: var(--fm-sand-dim);
+  margin-inline-end: 0.5rem;
+}
+
+.fm-badge.is-blocking { border-color: var(--fm-alert); color: var(--fm-alert); }
+.fm-badge.is-confirm { border-color: var(--fm-gold); color: var(--fm-gold); }
+.fm-badge.is-resolved { border-color: var(--fm-green); color: var(--fm-green); }
+
+/* --------------------------------------------------------------------------
+   Reveal chrome overrides
+   -------------------------------------------------------------------------- */
+
+.reveal .progress { color: var(--fm-green); height: 4px; }
+.reveal .controls { color: var(--fm-sand-dim); }
+.reveal .slide-number {
+  background: transparent;
+  color: var(--fm-sand-dim);
+  font-size: 15px;
+  font-family: var(--fm-font-en);
+  inset-inline-end: 1.2rem;
+  inset-inline-start: auto;
+}
+
+.reveal ::selection { background: var(--fm-green); color: var(--fm-deep); }
+
+/* Persistent classification bar ------------------------------------------- */
+
+.fm-classification {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 40;
+  text-align: center;
+  font-family: var(--fm-font-en);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fm-sand-dim);
+  background: rgba(7, 13, 10, 0.92);
+  border-bottom: 1px solid var(--fm-line);
+  padding: 5px 0 4px;
+  pointer-events: none;
+}
+
+/* Presenter timer --------------------------------------------------------- */
+
+.fm-timer {
+  position: fixed;
+  bottom: 1rem;
+  inset-inline-start: 1rem;
+  z-index: 40;
+  font-family: var(--fm-font-en);
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--fm-sand-dim);
+  background: rgba(7, 13, 10, 0.9);
+  border: 1px solid var(--fm-line);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
+.fm-timer[hidden] { display: none; }
+.fm-timer.is-warn { color: var(--fm-gold); border-color: var(--fm-gold); }
+.fm-timer.is-over { color: var(--fm-alert); border-color: var(--fm-alert); }
+
+/* Selection notice -------------------------------------------------------- */
+
+/* Shown briefly when the deck is running a subset of its slides, so a trimmed
+   deck is never mistaken for the full one. Bottom-centre, away from content. */
+.fm-toast {
+  position: fixed;
+  bottom: 4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  background: rgba(7, 13, 10, 0.92);
+  border: 1px solid var(--fm-green);
+  color: var(--fm-white);
+  font-family: var(--fm-font-en);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  padding: 8px 20px;
+  opacity: 1;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
+[dir='rtl'] .fm-toast { font-family: var(--fm-font-ar); }
+
+.fm-toast.is-out { opacity: 0; }
+
+/* Skip link --------------------------------------------------------------- */
+
+.fm-skip-link {
+  position: fixed;
+  top: -100px;
+  inset-inline-start: 1rem;
+  z-index: 100;
+  background: var(--fm-green);
+  color: var(--fm-deep);
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--fm-radius);
+  font-family: var(--fm-font-en);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.fm-skip-link:focus { top: 1rem; }
+
+/* Visible focus ring everywhere ------------------------------------------- */
+
+.reveal a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--fm-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal .slides section { transition: none !important; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

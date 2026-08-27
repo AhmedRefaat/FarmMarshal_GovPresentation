@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Arabic / RTL layer
+   Loaded only by presentation-ar.html and by any page with dir="rtl".
+   Logical properties do most of the work in theme.css; this file handles the
+   things that genuinely differ: typography metrics, numerals, and the few
+   places where reveal.js hard-codes a physical direction.
+   ========================================================================== */
+
+[dir='rtl'] .reveal,
+[dir='rtl'] body {
+  font-family: var(--fm-font-ar);
+}
+
+/* --------------------------------------------------------------------------
+   reveal.js RTL font override — do not remove.
+
+   reveal.css ships this rule:
+
+     .reveal.rtl .slides,
+     .reveal.rtl .slides h1, ... h6 { font-family: sans-serif; }
+
+   It is applied whenever Reveal is initialised with rtl: true, and it silently
+   throws away the vendored Arabic webfont, falling back to whatever generic
+   sans-serif the presenting machine happens to have. On a ministry laptop that
+   is usually Tahoma, and the deck stops looking like the deck that was
+   approved.
+
+   The selector below deliberately mirrors reveal's, prefixed with [dir='rtl']
+   so it wins on specificity rather than on source order.
+   -------------------------------------------------------------------------- */
+[dir='rtl'] .reveal.rtl .slides,
+[dir='rtl'] .reveal.rtl .slides h1,
+[dir='rtl'] .reveal.rtl .slides h2,
+[dir='rtl'] .reveal.rtl .slides h3,
+[dir='rtl'] .reveal.rtl .slides h4,
+[dir='rtl'] .reveal.rtl .slides h5,
+[dir='rtl'] .reveal.rtl .slides h6,
+[dir='rtl'] .reveal.rtl .slides p,
+[dir='rtl'] .reveal.rtl .slides li,
+[dir='rtl'] .reveal.rtl .slides td,
+[dir='rtl'] .reveal.rtl .slides th,
+[dir='rtl'] .reveal.rtl .slides figcaption {
+  font-family: var(--fm-font-ar);
+}
+
+/* Latin runs inside Arabic text keep the Latin face regardless of the above. */
+[dir='rtl'] .reveal.rtl .slides .fm-latin,
+[dir='rtl'] .reveal.rtl .slides code {
+  font-family: var(--fm-font-en);
+}
+
+/* Arabic glyphs carry more vertical weight than Latin at the same px size and
+   the script has no uppercase to lean on, so it needs a slightly larger size,
+   looser leading, and no letter-spacing (which breaks Arabic joining). */
+[dir='rtl'] .reveal {
+  font-size: 36px;
+  letter-spacing: 0;
+}
+
+[dir='rtl'] .reveal h1,
+[dir='rtl'] .reveal h2,
+[dir='rtl'] .reveal h3,
+[dir='rtl'] .reveal h4 {
+  font-family: var(--fm-font-ar);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+[dir='rtl'] .reveal h1 { font-size: 2em; }
+[dir='rtl'] .reveal h2 { font-size: 1.45em; }
+
+[dir='rtl'] .reveal p,
+[dir='rtl'] .reveal li,
+[dir='rtl'] .reveal td,
+[dir='rtl'] .reveal th {
+  line-height: 1.75;
+}
+
+/* Never uppercase or letter-space Arabic — both are meaningless for the script
+   and letter-spacing visually severs the cursive joins. */
+[dir='rtl'] .fm-eyebrow,
+[dir='rtl'] .reveal table.fm-table thead th,
+[dir='rtl'] .fm-badge,
+[dir='rtl'] .fm-classification {
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--fm-font-ar);
+}
+
+[dir='rtl'] .fm-eyebrow { font-size: 0.52em; font-weight: 600; }
+
+/* Arabic-Indic numerals for body copy, Western digits kept for figures that
+   appear in both decks (SAR values, percentages) so they stay comparable. */
+[dir='rtl'] .fm-num-ar {
+  font-feature-settings: 'numr' 0;
+  unicode-bidi: plaintext;
+}
+
+[dir='rtl'] .fm-stat,
+[dir='rtl'] .reveal td.is-num {
+  direction: ltr;
+  unicode-bidi: embed;
+  text-align: end;
+  font-family: var(--fm-font-en);
+}
+
+/* Latin fragments inside Arabic text (product names, acronyms like GACA/MEWA)
+   must be isolated or the bidi algorithm reorders surrounding punctuation. */
+[dir='rtl'] .fm-latin {
+  unicode-bidi: isolate;
+  direction: ltr;
+  font-family: var(--fm-font-en);
+  font-size: 0.94em;
+}
+
+/* No flex-direction override for .fm-chain: `direction: rtl` already lays a
+   normal `row` out right-to-left. Adding row-reverse here reversed it a second
+   time and put step 1 on the left, which reads as a translated English deck. */
+
+/* reveal.js positions these with physical left/right, so mirror explicitly. */
+[dir='rtl'] .reveal .controls {
+  right: auto !important;
+  left: 12px !important;
+}
+
+[dir='rtl'] .reveal .slide-number {
+  right: auto;
+  left: 1.2rem;
+  /* The counter is "current / total". Under RTL bidi resolution the two numbers
+     swap visually, so slide 11 of 30 reads as "30 / 11". Forcing LTR on this
+     one element keeps the reading order correct without affecting anything
+     else. */
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+[dir='rtl'] .fm-timer {
+  left: auto;
+  right: 1rem;
+}
+
+[dir='rtl'] .fm-skip-link {
+  left: auto;
+  right: 1rem;
+}
+
+/* Mirror the background scrim so the gradient still falls behind the text
+   column rather than across it. */
+[dir='rtl'] .fm-scrim::after {
+  background: linear-gradient(260deg, rgba(7, 13, 10, 0.94) 0%, rgba(7, 13, 10, 0.78) 42%, rgba(7, 13, 10, 0.34) 100%);
+}
+
+[dir='rtl'] .fm-scrim.is-even::after {
+  background: linear-gradient(180deg, rgba(7, 13, 10, 0.55) 0%, rgba(7, 13, 10, 0.86) 100%);
+}
+
+/* Arabic reads comfortably at a slightly wider measure than Latin. */
+[dir='rtl'] .fm-lead { max-width: 40ch; }
+[dir='rtl'] .fm-statement { max-width: 26ch; }
+[dir='rtl'] .fm-note { max-width: 78ch; }

@@ -1,0 +1,34 @@
+{
+  "name": "farm-marshal-gov-presentation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bilingual (Arabic/English) ministerial presentation for the Farm Marshal supervised pilot proposal. Runs offline from a USB stick or hosted as a static site.",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "vendor": "node scripts/vendor-deps.mjs",
+    "import-assets": "pwsh -NoProfile -File scripts/import-source-assets.ps1",
+    "create-user": "node scripts/create-user.mjs",
+    "slide-index": "node scripts/generate-slide-index.mjs",
+    "validate": "node scripts/validate-content.mjs",
+    "optimize": "node scripts/optimize-assets.mjs",
+    "test": "node scripts/test-auth-parity.mjs",
+    "check": "npm run validate && npm run verify && npm test",
+    "build": "npm run slide-index && npm run validate && node scripts/build-offline.mjs",
+    "verify": "node scripts/verify-build.mjs",
+    "verify:offline": "node scripts/verify-build.mjs dist-offline",
+    "start": "npx --yes http-server . -p 8080 -c-1"
+  },
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans-arabic": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "reveal.js": "^5.2.1",
+    "sharp": "^0.35.4"
+  }
+}

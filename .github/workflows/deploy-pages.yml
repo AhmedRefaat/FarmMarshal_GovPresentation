@@ -68,16 +68,9 @@ jobs:
         run: npm run verify
 
       - name: Assemble artifact
-        run: |
-          mkdir -p _site
-          cp -r index.html login.html config.html \
-                presentation-en.html presentation-ar.html \
-                assets config css js vendor docs _site/
-          # Defence in depth: the secret must not reach the published site.
-          rm -f _site/config/users.json
-          # Pages would otherwise try to run the output through Jekyll, which
-          # strips directories beginning with an underscore.
-          touch _site/.nojekyll
+        # File list lives in scripts/assemble-site.mjs so this workflow and any
+        # external host publish exactly the same thing.
+        run: npm run assemble-site
 
       - name: Confirm no plaintext credentials in the artifact
         run: |

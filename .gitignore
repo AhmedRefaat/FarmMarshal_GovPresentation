@@ -6,6 +6,7 @@ config/users.json
 
 # Build output --------------------------------------------------------------
 dist-offline/
+_site/
 FarmMarshal-Offline.zip
 
 # Generated derivatives — NOT ignored.

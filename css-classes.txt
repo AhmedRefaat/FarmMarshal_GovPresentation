@@ -1,0 +1,160 @@
+deck-builder.css:6: .fm-builder {
+deck-builder.css:12: .fm-builder-head {
+deck-builder.css:18: .fm-builder-head h1 {
+deck-builder.css:24: .fm-builder-head p {
+deck-builder.css:31: .fm-builder h2 {
+deck-builder.css:41: .fm-preset-grid {
+deck-builder.css:47: .fm-preset {
+deck-builder.css:59: .fm-preset:hover,
+deck-builder.css:60: .fm-preset:focus-visible {
+deck-builder.css:65: .fm-preset[aria-pressed='true'] {
+deck-builder.css:70: .fm-preset-name {
+deck-builder.css:76: .fm-preset-name-ar {
+deck-builder.css:84: .fm-preset-note {
+deck-builder.css:93: .fm-slide-group {
+deck-builder.css:100: .fm-slide-group-head {
+deck-builder.css:113: .fm-slide-row {
+deck-builder.css:122: .fm-slide-row:first-child {
+deck-builder.css:126: .fm-slide-row:hover {
+deck-builder.css:130: .fm-slide-row input {
+deck-builder.css:138: .fm-slide-row.is-off .fm-slide-en,
+deck-builder.css:139: .fm-slide-row.is-off .fm-slide-ar {
+deck-builder.css:144: .fm-slide-text {
+deck-builder.css:152: .fm-slide-en {
+deck-builder.css:156: .fm-slide-ar {
+deck-builder.css:164: .fm-slide-key {
+deck-builder.css:173: .fm-builder-bar {
+deck-builder.css:188: .fm-builder-count {
+deck-builder.css:194: .fm-builder-count small {
+deck-builder.css:202: .fm-btn {
+deck-builder.css:214: .fm-btn:hover,
+deck-builder.css:215: .fm-btn:focus-visible {
+deck-builder.css:219: .fm-btn.is-primary {
+deck-builder.css:226: .fm-btn.is-primary:hover {
+deck-builder.css:230: .fm-btn.is-quiet {
+deck-builder.css:238: .fm-share {
+deck-builder.css:246: .fm-share input {
+deck-builder.css:257: .fm-builder-note {
+deck-builder.css:267: .fm-builder {
+deck-builder.css:271: .fm-slide-key {
+deck-builder.css:278: .fm-deck-state {
+deck-builder.css:284: .fm-deck-state a {
+deck-builder.css:289: .fm-deck-state.is-custom {
+login.css:20: .fm-page {
+login.css:31: .fm-page-inner {
+login.css:36: .fm-page-mark {
+login.css:43: .fm-page-eyebrow {
+login.css:52: .fm-page-title {
+login.css:60: .fm-page-title-ar {
+login.css:70: .fm-page-sub {
+login.css:79: .fm-lang-grid {
+login.css:86: .fm-lang-card {
+login.css:97: .fm-lang-card:hover,
+login.css:98: .fm-lang-card:focus-visible {
+login.css:104: .fm-lang-card .fm-lang-name {
+login.css:111: .fm-lang-card .fm-lang-name.is-ar {
+login.css:116: .fm-lang-card .fm-lang-meta {
+login.css:123: .fm-lang-card .fm-lang-meta.is-ar {
+login.css:132: .fm-form {
+login.css:142: .fm-field { margin-bottom: 1.15rem; }
+login.css:144: .fm-field label {
+login.css:160: .fm-input,
+login.css:161: .fm-select {
+login.css:173: .fm-input:focus,
+login.css:174: .fm-select:focus {
+login.css:180: .fm-button {
+login.css:194: .fm-button:hover:not(:disabled) { background: #37b87d; }
+login.css:195: .fm-button:disabled { opacity: 0.55; cursor: not-allowed; }
+login.css:197: .fm-button.is-ghost {
+login.css:203: .fm-button.is-ghost:hover:not(:disabled) {
+login.css:210: .fm-message {
+login.css:219: .fm-message[hidden] { display: none; }
+login.css:220: .fm-message.is-error { background: rgba(210, 104, 60, 0.14); border-color: var(--fm-alert); color: #f0b79c; }
+login.css:221: .fm-message.is-info { background: rgba(46, 158, 107, 0.12); border-color: var(--fm-green-dark); color: #a5dcc1; }
+login.css:222: .fm-message.is-warn { background: rgba(201, 162, 39, 0.13); border-color: var(--fm-gold); color: #e2cd8a; }
+login.css:226: .fm-page-footer {
+login.css:235: .fm-page-footer a { color: var(--fm-sand); }
+login.css:237: .fm-classification-static {
+login.css:255: .fm-disclosure {
+login.css:264: .fm-disclosure strong { color: var(--fm-gold); }
+print.css:51: .fm-timer,
+print.css:52: .fm-skip-link,
+print.css:55: .fm-lang-switch,
+print.css:56: .fm-print-hide {
+print.css:61: .fm-classification {
+print.css:68: .fm-scrim::after {
+print.css:72: .fm-card {
+print.css:87: .fm-chain-step {
+print.css:92: .fm-chain-step.is-active {
+responsive.css:18: .fm-split { gap: 2.2rem; }
+responsive.css:19: .fm-grid { gap: 1rem; }
+responsive.css:20: .fm-card { padding: 1.15rem 1.3rem; }
+responsive.css:21: .fm-statement { font-size: 1.5em; }
+responsive.css:29: .fm-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+responsive.css:30: .fm-phone-row .fm-figure { max-width: 30%; }
+responsive.css:40: .fm-split,
+responsive.css:41: .fm-split.is-narrow-start,
+responsive.css:42: .fm-split.is-narrow-end {
+responsive.css:47: .fm-grid.cols-2,
+responsive.css:48: .fm-grid.cols-3 {
+responsive.css:52: .fm-chain { flex-direction: column; }
+responsive.css:54: .fm-chain-step { min-width: 0; }
+responsive.css:56: .fm-phone-row { flex-wrap: wrap; }
+responsive.css:57: .fm-phone-row .fm-figure { max-width: 46%; }
+responsive.css:59: .fm-statement { font-size: 1.3em; max-width: none; }
+responsive.css:60: .fm-lead { max-width: none; }
+responsive.css:62: .fm-footnote { position: static; margin-top: 1.2rem; }
+responsive.css:102: .fm-page { padding: 2rem 1.25rem; }
+responsive.css:103: .fm-lang-grid { grid-template-columns: 1fr; }
+responsive.css:104: .fm-page-title { font-size: 2rem; }
+responsive.css:112: .fm-classification { font-size: 9px; padding: 3px 0 2px; }
+responsive.css:113: .fm-footnote { bottom: 1.2rem; font-size: 0.34em; }
+responsive.css:121: .fm-card,
+responsive.css:122: .fm-chain-step,
+responsive.css:123: .fm-figure,
+responsive.css:124: .fm-badge {
+responsive.css:128: .fm-scrim::after { display: none; }
+theme.css:108: .fm-eyebrow {
+theme.css:117: .fm-eyebrow.is-alert { color: var(--fm-alert); }
+theme.css:118: .fm-eyebrow.is-gold { color: var(--fm-gold); }
+theme.css:120: .fm-lead {
+theme.css:127: .fm-statement {
+theme.css:135: .fm-note {
+theme.css:159: .fm-split {
+theme.css:166: .fm-split.is-narrow-start { grid-template-columns: 0.85fr 1.15fr; }
+theme.css:167: .fm-split.is-narrow-end { grid-template-columns: 1.15fr 0.85fr; }
+theme.css:171: .fm-grid {
+theme.css:176: .fm-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+theme.css:177: .fm-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+theme.css:179: .fm-card {
+theme.css:186: .fm-card h3 {
+theme.css:193: .fm-card p {
+theme.css:200: .fm-card.is-alert { border-color: rgba(210, 104, 60, 0.5); }
+theme.css:201: .fm-card.is-alert h3 { color: var(--fm-alert); }
+theme.css:267: .fm-chain {
+theme.css:275: .fm-chain-step {
+theme.css:291: .fm-chain-step.is-active {
+theme.css:300: .fm-stat {
+theme.css:308: .fm-stat-label {
+theme.css:317: .fm-figure {
+theme.css:325: .fm-figure img,
+theme.css:326: .fm-figure video {
+theme.css:332: .fm-figure figcaption {
+theme.css:340: .fm-phone-row {
+theme.css:347: .fm-phone-row .fm-figure { flex: 1 1 0; max-width: 22%; }
+theme.css:351: .fm-scrim::after {
+theme.css:360: .fm-scrim.is-even::after {
+theme.css:364: .fm-scrim > * { position: relative; z-index: 1; }
+theme.css:368: .fm-badge {
+theme.css:381: .fm-badge.is-blocking { border-color: var(--fm-alert); color: var(--fm-alert); }
+theme.css:382: .fm-badge.is-confirm { border-color: var(--fm-gold); color: var(--fm-gold); }
+theme.css:383: .fm-badge.is-resolved { border-color: var(--fm-green); color: var(--fm-green); }
+theme.css:404: .fm-classification {
+theme.css:423: .fm-timer {
+theme.css:440: .fm-timer[hidden] { display: none; }
+theme.css:441: .fm-timer.is-warn { color: var(--fm-gold); border-color: var(--fm-gold); }
+theme.css:442: .fm-timer.is-over { color: var(--fm-alert); border-color: var(--fm-alert); }
+theme.css:448: .fm-toast {
+theme.css:469: .fm-toast.is-out { opacity: 0; }
+theme.css:473: .fm-skip-link {
+theme.css:488: .fm-skip-link:focus { top: 1rem; }

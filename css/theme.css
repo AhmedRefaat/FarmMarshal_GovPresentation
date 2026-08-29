@@ -175,6 +175,7 @@ body.reveal-viewport {
 
 .fm-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
 .fm-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.fm-grid.cols-4 { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 
 .fm-card {
   background: var(--fm-panel);
@@ -345,6 +346,37 @@ body.reveal-viewport {
 }
 
 .fm-phone-row .fm-figure { flex: 1 1 0; max-width: 22%; }
+
+/* Baseline vs. current capture. Grid rather than flex so the two frames stay
+   the same width whatever their intrinsic aspect ratio. */
+.fm-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.fm-compare .fm-figure.is-flagged { border-color: var(--fm-alert); }
+.fm-compare .fm-figure.is-flagged figcaption { color: var(--fm-alert); }
+
+.fm-logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  margin-top: 2.2rem;
+}
+
+/* Both supplied logos are dark artwork on transparency, so they need a light
+   plate to survive the deck's near-black background. */
+.fm-logo-row img {
+  height: 70px;
+  width: auto;
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 16px;
+}
 
 /* Background scrim so text stays readable over video/imagery --------------- */
 

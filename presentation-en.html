@@ -173,18 +173,17 @@
       <div class="fm-split is-narrow-start" style="margin-top:0.5rem;">
         <div>
           <ul class="fm-list">
-            <li>Satellite context</li>
             <li>Authorized drone inspection</li>
-            <li>Ground sensors and valves</li>
+            <li>Ground sensors and instrumentation</li>
             <li>Field operator reports</li>
-            <li>Every previous season</li>
+            <li>All previous seasons</li>
           </ul>
         </div>
         <div>
           <div class="fm-chain" style="flex-wrap:wrap;">
             <div class="fm-chain-step is-active">Geotagged,<br>timestamped evidence</div>
-            <div class="fm-chain-step">Expert review<br>by a named specialist</div>
-            <div class="fm-chain-step">Assigned task<br>with a deadline</div>
+            <div class="fm-chain-step">Expert review</div>
+            <div class="fm-chain-step">Assigned task<br>with a set date</div>
             <div class="fm-chain-step">Proof of<br>completion</div>
           </div>
           <p class="fm-lead" style="margin-top:1.2rem;">
@@ -222,14 +221,9 @@
         </thead>
         <tbody>
           <tr>
-            <td data-label="Layer">Satellite</td>
-            <td data-label="Does">Regional context, change detection</td>
-            <td data-label="Cannot">Resolve an individual palm</td>
-          </tr>
-          <tr>
             <td data-label="Layer">Drone</td>
-            <td data-label="Does">Farm-level detail, on demand</td>
-            <td data-label="Cannot">Measure continuously</td>
+            <td data-label="Does">Periodic whole-farm inspection; aerial fertilisation and pollination</td>
+            <td data-label="Cannot">Measure as precisely as ground sensors</td>
           </tr>
           <tr>
             <td data-label="Layer">Ground sensors</td>
@@ -246,10 +240,10 @@
 
       <aside class="notes">
         <h4>Say</h4>
-        <p>"We never claim drones are better than satellites. They do different jobs, and this
-           room knows it. And no layer replaces the licensed agronomist — the platform makes
-           that person's judgment reach further, and makes it traceable."</p>
-        <p>Claiming drone superiority over satellites is a credibility trap. Avoid it.</p>
+        <p>"Each layer does a different job, and this room knows it. And no layer replaces the
+           licensed agronomist — the platform makes that person's judgment reach further, and
+           makes it traceable."</p>
+        <p>Do not claim one tool is superior to another. A sweeping claim is a credibility trap.</p>
       </aside>
     </section>
 
@@ -269,16 +263,23 @@
             <div class="fm-chain-step">Recommend</div>
           </div>
           <ul class="fm-list" style="margin-top:1.4rem;">
-            <li>A flagged zone on a mapped estate</li>
-            <li>Geotag, timestamp, altitude</li>
-            <li>Flight identifier attached to the evidence</li>
+            <li>Automatic comparison against the farm's recorded baseline</li>
+            <li>A clear change in one defined zone, not across the estate</li>
+            <li>Every image carries its location, time and flight</li>
           </ul>
         </div>
-        <figure class="fm-figure">
-          <img src="assets/screenshots/optimized/ui-overlay.jpg"
-               alt="Inspection overlay showing a flagged zone with location metadata">
-          <figcaption>Detection overlay with capture metadata.</figcaption>
-        </figure>
+        <div class="fm-compare">
+          <figure class="fm-figure">
+            <img src="assets/images/optimized/baseline-zone.jpg"
+                 alt="Baseline image of the estate from an earlier inspection">
+            <figcaption>Baseline &mdash; earlier inspection.</figcaption>
+          </figure>
+          <figure class="fm-figure is-flagged">
+            <img src="assets/images/optimized/anomaly-zone.jpg"
+                 alt="Current inspection image showing a change in one defined zone">
+            <figcaption>Current inspection &mdash; change detected.</figcaption>
+          </figure>
+        </div>
       </div>
 
       <aside class="notes">
@@ -286,8 +287,10 @@
         <p>Never demo live against a remote server on ministry Wi-Fi. Keep the recorded
            screen capture one keypress away.</p>
         <h4>Say</h4>
-        <p>"Note the flight identifier. We will come back to it." — this plants the thread you
-           pull on the Interior slide.</p>
+        <p>"We did not find this because somebody happened to be looking. We found it because
+           the same ground was photographed before, so the change is visible by comparison."</p>
+        <p>"And note that every image carries its location, time and flight. We will come back
+           to that." — this plants the thread you pull on the Interior slide.</p>
       </aside>
     </section>
 
@@ -301,7 +304,7 @@
              data-background-video-muted
              data-background-size="cover">
       <p class="fm-eyebrow">Live demonstration &middot; 2 of 3</p>
-      <h2>A named expert takes responsibility</h2>
+      <h2>The farm's own expert, backed by a global network</h2>
 
       <div class="fm-chain" style="max-width:60%;">
         <div class="fm-chain-step">Inspect</div>
@@ -310,19 +313,24 @@
         <div class="fm-chain-step is-active">Recommend</div>
       </div>
 
-      <ul class="fm-list" style="margin-top:1.6rem;max-width:46ch;">
-        <li>Identity and certification verified before assignment</li>
-        <li>Crop and region specialisation matched to the case</li>
-        <li>Conflict-of-interest declared and recorded</li>
+      <ul class="fm-list" style="margin-top:1.6rem;max-width:54ch;">
+        <li>The farm's own agronomist keeps the decision — we extend his reach, not replace him</li>
+        <li>He reviews the whole estate from his screen, and goes to the field only where his presence is genuinely warranted</li>
+        <li>A case that is new to him is escalated to a worldwide expert network</li>
+        <li>That network is vetted: academic qualification, crop specialisation, and a rating built from past recommendations</li>
       </ul>
 
       <aside class="notes">
-        <h4>Say</h4>
-        <p>"The recommendation is attributable to a qualified person who is legally and
-           commercially accountable for it. AI ranks where the expert should look first.
-           It does not decide."</p>
-        <p>Expect the question "is this AI making the decisions?" — answer it here rather
-           than waiting. Appendix A3 has the detail if they push.</p>
+        <h4>Open with this line</h4>
+        <p>"Every farm already has a responsible agronomist. We are not a replacement for him."
+           — say it before anything else. It removes the single biggest objection a farm owner
+           will raise.</p>
+        <h4>Then the argument</h4>
+        <p>"We offer two things: that the farm's expert can see all of his land without driving
+           across it, and that he has somewhere to turn when a case falls outside his experience."</p>
+        <p>The recommendation stays attributable to a qualified person who is accountable for it.
+           AI ranks where to look first — it does not decide. Expect "is this AI making the
+           decisions?" and answer it here rather than waiting. Appendix A3 has the detail.</p>
       </aside>
     </section>
 
@@ -331,7 +339,7 @@
     <!-- ================================================================== -->
     <section id="demo-close">
       <p class="fm-eyebrow">Live demonstration &middot; 3 of 3</p>
-      <h2>Closed against evidence, not against a phone call</h2>
+      <h2>A task with a deadline, tracked to completion</h2>
 
       <div class="fm-chain">
         <div class="fm-chain-step">Inspect</div>
@@ -340,7 +348,6 @@
         <div class="fm-chain-step">Recommend</div>
         <div class="fm-chain-step is-active">Implement</div>
         <div class="fm-chain-step is-active">Verify</div>
-        <div class="fm-chain-step is-active">Learn</div>
       </div>
 
       <div class="fm-phone-row" style="margin-top:1.8rem;">
@@ -380,7 +387,7 @@
              data-background-image="assets/images/optimized/drip-irrigation.jpg"
              data-background-size="cover"
              data-background-position="right center">
-      <p class="fm-eyebrow">For the Ministry of Environment, Water &amp; Agriculture</p>
+      <p class="fm-eyebrow">Environment, Water &amp; Agriculture</p>
       <h2>Water you can account for.<br>Intervention before spread.</h2>
 
       <table class="fm-table" style="max-width:88%;">
@@ -393,11 +400,19 @@
         <tbody>
           <tr>
             <td data-label="Gets">Water visibility per zone, per season</td>
-            <td data-label="Mechanism">Irrigation checkpoints, valve telemetry, aerial anomaly detection</td>
+            <td data-label="Mechanism">Irrigation checkpoints, valve telemetry, aerial detection of unusual change</td>
           </tr>
           <tr>
             <td data-label="Gets">Earlier plant-health intervention</td>
             <td data-label="Mechanism">Fixed-route repeat inspection, change detection against history</td>
+          </tr>
+          <tr class="is-highlight">
+            <td data-label="Gets"><strong>An announcement channel that reaches every participating farm</strong></td>
+            <td data-label="Mechanism"><strong>A Ministry notice appears in every farm and operator app, with proof of receipt</strong></td>
+          </tr>
+          <tr>
+            <td data-label="Gets">Aggregated reporting by region and by crop</td>
+            <td data-label="Mechanism">Pooled figures with no farm identity — no individual estate is exposed</td>
           </tr>
           <tr>
             <td data-label="Gets">A standardised, comparable dataset</td>
@@ -414,6 +429,11 @@
         </tbody>
       </table>
 
+      <p class="fm-note">
+        What the Ministry sees is aggregated to region and crop level. Named-farm data stays
+        with its owner, and is shared only with consent or on a defined legal basis.
+      </p>
+
       <aside class="notes">
         <h4>Introduce the block</h4>
         <p>"The next three slides are one for each of you. They are different on purpose."</p>
@@ -421,6 +441,13 @@
         <p>"Today the Ministry sets policy on irrigation efficiency but receives self-reported
            farm data. We are offering measured data, collected to one protocol, that the farm
            owner has a commercial reason to keep accurate — because his payments depend on it."</p>
+        <h4>Read the note line verbatim</h4>
+        <p>Someone will ask — or think without asking — "is this a monitor inside the farm?"
+           Answer it plainly: "The Ministry sees region and crop, not the individual estate.
+           We would rather say that before we are asked."</p>
+        <h4>The announcement channel</h4>
+        <p>This is the benefit the Ministry cannot easily get any other way: a notice that
+           actually reaches every farm, with evidence that the farm saw it.</p>
         <h4>The line that lands</h4>
         <p>"We are not asking the Ministry to trust our numbers. We are asking it to define the
            KPIs, and we will report against them."</p>
@@ -438,7 +465,7 @@
              data-background-video-loop
              data-background-video-muted
              data-background-size="cover">
-      <p class="fm-eyebrow">For the Ministry of Interior</p>
+      <p class="fm-eyebrow">Ministry of Interior</p>
       <h2>Every flight registered.<br>Every pilot identified.<br>Every track retained.</h2>
 
       <table class="fm-table" style="max-width:92%;">
@@ -503,7 +530,7 @@
              class="fm-scrim"
              data-background-image="assets/images/optimized/desert-farm.jpg"
              data-background-size="cover">
-      <p class="fm-eyebrow">For the Ministry of Defense</p>
+      <p class="fm-eyebrow">Ministry of Defense</p>
       <h2>Sovereign data.<br>A localizable capability.</h2>
 
       <div class="fm-grid cols-2" style="margin-top:0.6rem;">
@@ -521,7 +548,7 @@
         </div>
         <div class="fm-card">
           <h3>National operator pool</h3>
-          <p>Certified Saudi remote pilots, maintenance and mission planning as a domestic skill base.</p>
+          <p>Certified Saudi remote pilots and mission planning as a domestic skill base.</p>
         </div>
         <div class="fm-card">
           <h3>Airspace discipline</h3>
@@ -569,11 +596,11 @@
           </tr>
           <tr>
             <td data-label="Actor">Expert</td>
-            <td data-label="Sees">Only the case assigned to them</td>
-            <td data-label="Cannot see">Estate identity beyond the case</td>
+            <td data-label="Sees">Only the farm assigned to them</td>
+            <td data-label="Cannot see">Any estate or farm outside their remit</td>
           </tr>
           <tr>
-            <td data-label="Actor">Remote pilot</td>
+            <td data-label="Actor">Drone operator</td>
             <td data-label="Sees">Only the authorized mission envelope</td>
             <td data-label="Cannot see">Case content or expert findings</td>
           </tr>
@@ -660,14 +687,34 @@
     <!-- ================================================================== -->
     <section id="economics">
       <p class="fm-eyebrow is-gold">Planning assumptions — not customer results</p>
-      <h2>Modelled economics, 1,000 hectares</h2>
+      <h2>What a 1,000-hectare farm gains</h2>
 
-      <table class="fm-table" style="max-width:86%;">
+      <div class="fm-grid cols-4" style="margin-top:0.6rem;">
+        <div class="fm-card">
+          <h3>Less water</h3>
+          <p>Irrigation measured per zone instead of estimated across the whole estate.</p>
+        </div>
+        <div class="fm-card">
+          <h3>Less crop lost</h3>
+          <p>Early detection treats a contained outbreak before it becomes a lost season.</p>
+        </div>
+        <div class="fm-card">
+          <h3>Less inspection time</h3>
+          <p>Field visits directed only to the points that justify them.</p>
+        </div>
+        <div class="fm-card">
+          <h3>Payment against evidence</h3>
+          <p>Work that cannot be shown to have happened is not paid for.</p>
+        </div>
+      </div>
+
+      <table class="fm-table" style="max-width:94%;margin-top:1.4rem;">
         <thead>
           <tr>
             <th scope="col">Scenario</th>
             <th scope="col">Annual gross value</th>
             <th scope="col">Service cost</th>
+            <th scope="col">Net gain</th>
             <th scope="col">Benefit&ndash;cost</th>
           </tr>
         </thead>
@@ -676,26 +723,30 @@
             <td data-label="Scenario">Conservative</td>
             <td class="is-num" data-label="Gross value">SAR 810,000</td>
             <td class="is-num" data-label="Cost">SAR 600,000</td>
+            <td class="is-num" data-label="Net">SAR 210,000</td>
             <td class="is-num" data-label="Ratio">1.35&times;</td>
           </tr>
           <tr class="is-highlight">
             <td data-label="Scenario"><strong>Expected</strong></td>
             <td class="is-num" data-label="Gross value"><strong>SAR 1,680,000</strong></td>
             <td class="is-num" data-label="Cost"><strong>SAR 600,000</strong></td>
+            <td class="is-num" data-label="Net"><strong>SAR 1,080,000</strong></td>
             <td class="is-num" data-label="Ratio"><strong>2.80&times;</strong></td>
           </tr>
           <tr>
             <td data-label="Scenario">Strong</td>
             <td class="is-num" data-label="Gross value">SAR 2,580,000</td>
             <td class="is-num" data-label="Cost">SAR 600,000</td>
+            <td class="is-num" data-label="Net">SAR 1,980,000</td>
             <td class="is-num" data-label="Ratio">4.30&times;</td>
           </tr>
         </tbody>
       </table>
 
       <p class="fm-note">
-        Synthetic planning assumptions for a representative estate, not measured outcomes.
-        Our own commercial gate is a verified benefit&ndash;cost ratio of at least 2&times;.
+        Synthetic planning assumptions for a representative estate, not measured outcomes. Our own
+        commercial gate is a verified benefit&ndash;cost ratio of at least 2&times;. The pilot is what
+        replaces these figures with measured ones for your farm.
       </p>
 
       <aside class="notes">
@@ -704,9 +755,13 @@
            a pilot is that we would rather bring you measured numbers than argue about modelled
            ones. Our own commercial gate is a verified benefit-cost ratio of at least two times.
            If the pilot does not clear it, we will tell you so."</p>
+        <h4>If asked to break the number down</h4>
+        <p>Do not invent a split across the four drivers. Say: "Those four are the components of
+           the value. How much each one contributes varies by crop and region — which is exactly
+           what the pilot measures." Appendix A9 exposes every assumption.</p>
         <h4>Why this framing</h4>
         <p>Volunteering your own kill criterion is the strongest credibility move available to a
-           first-time vendor in front of a regulator. Appendix A9 exposes every assumption.</p>
+           first-time vendor in front of a regulator.</p>
       </aside>
     </section>
 
@@ -724,32 +779,33 @@
       <div class="fm-grid cols-3" style="margin-top:0.8rem;max-width:82%;">
         <div class="fm-card">
           <h3>Certified remote pilots</h3>
-          <p>Trained, licensed and employed per operational region.</p>
+          <p>We employ already-certified pilots in each operational region.</p>
         </div>
         <div class="fm-card">
           <h3>Field operators</h3>
-          <p>Evidence capture, ground verification, equipment handling.</p>
+          <p>We train them on evidence capture, ground verification and equipment handling.</p>
         </div>
         <div class="fm-card">
-          <h3>Agronomy reviewers</h3>
-          <p>Saudi specialists reviewing Saudi cases, building a national case history.</p>
+          <h3>Global expert network</h3>
+          <p>Agronomy expertise from specialists worldwide reaches the Saudi farm without relocating them.</p>
         </div>
         <div class="fm-card">
-          <h3>Imagery analysts</h3>
-          <p>Data, annotation and quality assurance roles that did not previously exist locally.</p>
+          <h3>Imagery review and annotation</h3>
+          <p>The expert watches the footage and annotates the image itself; each season's results become lessons learned for the farm.</p>
         </div>
         <div class="fm-card">
-          <h3>Maintenance</h3>
-          <p>Airframe and payload servicing held in-Kingdom rather than shipped abroad.</p>
+          <h3>In-Kingdom operations centre</h3>
+          <p>Mission planning, monitoring and farm support, staffed locally.</p>
         </div>
         <div class="fm-card">
-          <h3>Saudi-content roadmap</h3>
-          <p>Defined by phase, reported against, and reviewable by the authority.</p>
+          <h3>National knowledge base</h3>
+          <p>Water use per region and season, diseases detected, highly-rated recommendation counts, and how the deployed sensors actually performed.</p>
         </div>
       </div>
 
       <p class="fm-note">
-        Headcount figures to be inserted once the pilot scope is fixed. Present only numbers you can defend.
+        The national knowledge base is built from farms that consented to share, in aggregated form.
+        Headcount figures go in once the pilot scope is fixed — present only numbers you can defend.
       </p>
 
       <aside class="notes">
@@ -757,6 +813,10 @@
         <p>Do not invent job numbers. An unfounded employment figure in front of a ministry is
            the same category of error as the unsourced loss figure on slide 4 — and here you have
            no excuse, because the number depends entirely on a scope you control.</p>
+        <h4>Correction — do not get this wrong</h4>
+        <p>We do <strong>not</strong> service drones. Never offer maintenance as a localization
+           benefit. We also employ pilots who are already certified; we do not claim to license
+           them. The training we provide is for field operators.</p>
       </aside>
     </section>
 
@@ -828,11 +888,20 @@
              data-background-video-muted
              data-background-size="cover"
              data-background-image="assets/images/optimized/farm-aerial.jpg">
-      <p class="fm-statement" style="max-width:26ch;">
-        One farm under control.<br>
-        One decision supported by evidence.<br>
-        One model that can <span class="fm-accent">scale</span>.
+      <p class="fm-statement" style="max-width:28ch;">
+        <strong>Control over every farm.</strong><br>
+        <strong>Confidence in every decision.</strong><br>
+        One model that <span class="fm-accent">scales</span>&hellip;
       </p>
+      <p class="fm-lead" style="text-align:center;margin-inline:auto;max-width:44ch;">
+        in step with the ambitions of Saudi Vision 2030.
+      </p>
+
+      <div class="fm-logo-row">
+        <img src="assets/logos/farm-marshal.png" alt="Farm Marshal">
+        <img src="assets/logos/vision-2030.png" alt="Saudi Vision 2030">
+      </div>
+
       <p class="fm-footnote" style="text-align:center;">
         Farm Marshal &middot; Al Sarrani Group &times; Oriel Company
       </p>

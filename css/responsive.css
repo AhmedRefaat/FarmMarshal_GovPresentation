@@ -56,8 +56,22 @@
   .fm-phone-row { flex-wrap: wrap; }
   .fm-phone-row .fm-figure { max-width: 46%; }
 
+  .fm-tour-layout { grid-template-columns: 1fr; gap: 1.2rem; }
+  .fm-tour-screen { height: 480px; }
+  .fm-tour-controls { justify-content: center; }
+
   .fm-statement { font-size: 1.3em; max-width: none; }
   .fm-lead { max-width: none; }
+  .fm-ai-capability .fm-list { font-size: 0.8em; }
+  .fm-appendix-roadmap .fm-chain-step { font-size: 0.78em; }
+  .fm-appendix-roadmap .fm-large-note { font-size: 0.72em; }
+  .fm-appendix-retention .fm-large-list,
+  .fm-appendix-heat .fm-large-list { font-size: 0.7em; }
+  .fm-appendix-heat .fm-large-note { font-size: 0.68em; }
+  .fm-localization .fm-card h3 { font-size: 0.82em; }
+  .fm-localization .fm-card-list { font-size: 0.7em !important; }
+  .fm-localization-note { font-size: 0.78em; margin-top: 3.5rem; }
+  .fm-localization .fm-grid.cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
 
   .fm-footnote { position: static; margin-top: 1.2rem; }
 

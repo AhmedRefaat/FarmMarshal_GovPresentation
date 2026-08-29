@@ -11,6 +11,18 @@
     return /print-pdf/gi.test(global.location.search);
   }
 
+  function mobileRevealOptions() {
+    if (!global.matchMedia('(max-width: 720px)').matches) return {};
+
+    return {
+      width: Math.max(global.innerWidth, 320),
+      height: Math.max(global.innerHeight, 1600),
+      margin: 0,
+      minScale: 0.2,
+      maxScale: 1,
+    };
+  }
+
   /* ---------------------------------------------------------------------- */
   /* Presenter timer                                                         */
   /* ---------------------------------------------------------------------- */
@@ -77,7 +89,7 @@
       if (global.RevealZoom) plugins.push(global.RevealZoom);
       if (global.RevealSearch) plugins.push(global.RevealSearch);
 
-      var revealOptions = Object.assign({}, cfg, {
+      var revealOptions = Object.assign({}, cfg, mobileRevealOptions(), {
         rtl: options.rtl === true,
         plugins: plugins,
         keyboard: {
@@ -112,6 +124,7 @@
     onReady: function (options, selection) {
       this.setupTimer();
       this.setupClassification(options);
+      this.setupCopyrightMark();
       global.FMLanguage.bindSwitcher();
       global.FMDemo.init();
       this.setupAccessibility();
@@ -148,6 +161,15 @@
       bar.className = 'fm-classification';
       bar.textContent = text;
       doc.body.appendChild(bar);
+    },
+
+    setupCopyrightMark: function () {
+      var mark = doc.createElement('img');
+      mark.className = 'fm-copyright-mark';
+      mark.src = 'assets/logos/oriel.png';
+      mark.alt = 'Oriel Company';
+      mark.setAttribute('aria-hidden', 'true');
+      doc.body.appendChild(mark);
     },
 
     /**

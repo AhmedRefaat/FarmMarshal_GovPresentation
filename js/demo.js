@@ -17,6 +17,7 @@
     init: function () {
       this.guardMedia();
       this.bindSlideMedia();
+      this.bindProductTours();
       this.renderVerification();
     },
 
@@ -122,6 +123,86 @@
       });
 
       updateFor(global.Reveal.getCurrentSlide());
+    },
+
+    bindProductTours: function () {
+      var tours = doc.querySelectorAll('[data-fm-tour]');
+      if (!tours.length) return;
+
+      function roleLabel(role) {
+        var labels = doc.documentElement.lang === 'ar'
+          ? { owner: 'مالك المزرعة', moderator: 'مشرف المزرعة', expert: 'الخبير الزراعي', worker: 'العامل الميداني' }
+          : { owner: 'Farm owner', moderator: 'Farm moderator', expert: 'Agricultural expert', worker: 'Field worker' };
+        return labels[role] || '';
+      }
+
+      function update(tour, index) {
+        var frames = tour.querySelectorAll('[data-fm-tour-frame]');
+        if (!frames.length) return;
+
+        var nextIndex = ((index % frames.length) + frames.length) % frames.length;
+        var frame = frames[nextIndex];
+        tour.fmTourIndex = nextIndex;
+
+        Array.prototype.forEach.call(frames, function (item, itemIndex) {
+          var active = itemIndex === nextIndex;
+          item.classList.toggle('is-active', active);
+          item.setAttribute('aria-hidden', active ? 'false' : 'true');
+        });
+
+        Array.prototype.forEach.call(tour.querySelectorAll('[data-fm-tour-index]'), function (dot) {
+          var active = Number(dot.getAttribute('data-fm-tour-index')) === nextIndex;
+          dot.classList.toggle('is-active', active);
+          dot.setAttribute('aria-current', active ? 'true' : 'false');
+        });
+
+        var role = tour.querySelector('[data-fm-tour-role]');
+        var title = tour.querySelector('[data-fm-tour-title]');
+        var detail = tour.querySelector('[data-fm-tour-detail]');
+        var count = tour.querySelector('[data-fm-tour-count]');
+        if (role) role.textContent = roleLabel(frame.getAttribute('data-role'));
+        if (title) title.textContent = frame.getAttribute('data-title') || '';
+        if (detail) detail.textContent = frame.getAttribute('data-detail') || '';
+        if (count) count.textContent = String(nextIndex + 1) + ' / ' + String(frames.length);
+      }
+
+      function stop(tour) {
+        if (!tour.fmTourTimer) return;
+        global.clearInterval(tour.fmTourTimer);
+        tour.fmTourTimer = null;
+      }
+
+      function start(tour) {
+        stop(tour);
+        if (global.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        var interval = Number(tour.getAttribute('data-fm-tour-interval')) || 5000;
+        tour.fmTourTimer = global.setInterval(function () {
+          update(tour, (tour.fmTourIndex || 0) + 1);
+        }, interval);
+      }
+
+      Array.prototype.forEach.call(tours, function (tour) {
+        update(tour, 0);
+        Array.prototype.forEach.call(tour.querySelectorAll('[data-fm-tour-index]'), function (dot) {
+          dot.addEventListener('click', function () {
+            update(tour, Number(dot.getAttribute('data-fm-tour-index')) || 0);
+            if (tour.classList.contains('present')) start(tour);
+          });
+        });
+      });
+
+      function sync(slide) {
+        Array.prototype.forEach.call(tours, function (tour) {
+          if (tour === slide) start(tour);
+          else stop(tour);
+        });
+      }
+
+      global.Reveal.on('slidechanged', function (event) {
+        sync(event.currentSlide);
+      });
+      sync(global.Reveal.getCurrentSlide());
     },
 
     /**

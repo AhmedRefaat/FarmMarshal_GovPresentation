@@ -133,11 +133,16 @@ body.reveal-viewport {
 }
 
 .fm-note {
-  font-size: 0.46em;
+  font-size: 0.48em;
   color: var(--fm-sand-dim);
   line-height: 1.5;
-  margin-top: 1.4rem;
+  margin-top: 1.8rem;
   max-width: 70ch;
+}
+
+.fm-note.is-single-line {
+  font-size: 0.38em;
+  white-space: nowrap;
 }
 
 /* Specificity is deliberate: reveal.css sets position:relative on slide
@@ -263,6 +268,36 @@ body.reveal-viewport {
 .reveal ul.fm-list li.is-no::before { background: var(--fm-alert); }
 .reveal ul.fm-list li.is-yes::before { background: var(--fm-green); box-shadow: 0 0 0 5px rgba(46, 158, 107, 0.18); }
 
+.reveal ul.fm-large-list { font-size: 0.62em; }
+.fm-large-note { font-size: 0.58em; }
+
+.fm-card-list { font-size: 0.5em !important; }
+.reveal ul.fm-card-list li { margin: 0; padding-inline-start: 1.5rem; }
+.reveal ul.fm-card-list li::before { width: 0.46rem; height: 0.46rem; top: 0.62em; }
+
+.fm-ai-capability .fm-list { font-size: 0.64em; }
+.fm-localization-note { font-size: 0.62em; margin-top: 3.5rem; max-width: 72ch; }
+
+.reveal ul.fm-sublist {
+  list-style: none;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  font-size: 0.92em;
+}
+
+.reveal ul.fm-list .fm-sublist li {
+  color: var(--fm-sand-dim);
+  margin-bottom: 0;
+  padding-inline-start: 1.5rem;
+}
+
+.reveal ul.fm-list .fm-sublist li::before {
+  width: 0.35rem;
+  height: 0.35rem;
+  top: 0.62em;
+  background: var(--fm-sand-dim);
+}
+
 /* Pipeline / chain -------------------------------------------------------- */
 
 .fm-chain {
@@ -294,6 +329,20 @@ body.reveal-viewport {
   background: rgba(46, 158, 107, 0.14);
   color: var(--fm-white);
   font-weight: 600;
+}
+
+.reveal #flight-chain .fm-chain-step { font-size: 0.5em; }
+.fm-appendix-roadmap .fm-chain-step { font-size: 0.52em; }
+
+.fm-vertical-cue {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 1.15rem;
+  margin: 0;
+  text-align: center;
+  color: var(--fm-sand-dim);
+  font-size: 0.32em;
+  letter-spacing: 0.08em;
 }
 
 /* Stat block -------------------------------------------------------------- */
@@ -359,6 +408,119 @@ body.reveal-viewport {
 .fm-compare .fm-figure.is-flagged { border-color: var(--fm-alert); }
 .fm-compare .fm-figure.is-flagged figcaption { color: var(--fm-alert); }
 
+/* Platform walkthrough ---------------------------------------------------- */
+
+.fm-platform-tour h2 { max-width: 36ch; }
+
+.fm-tour-layout {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.6fr) minmax(0, 1.4fr);
+  gap: 2rem;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.fm-tour-copy {
+  border-inline-start: 3px solid var(--fm-green);
+  padding-inline-start: 1.3rem;
+}
+
+.fm-tour-role {
+  color: var(--fm-green);
+  font-size: 0.58em;
+  font-weight: 600;
+  margin: 0 0 0.55rem;
+}
+
+.fm-tour-copy h3 {
+  color: var(--fm-white);
+  font-size: 0.9em;
+  line-height: 1.25;
+  margin: 0 0 0.7rem;
+}
+
+.fm-tour-copy > p:last-child {
+  color: var(--fm-sand);
+  font-size: 0.58em;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.fm-tour-screen {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  border: 1px solid var(--fm-line);
+  border-radius: var(--fm-radius);
+  background: var(--fm-deep-2);
+}
+
+.fm-tour-frame {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.fm-tour-frame.is-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.fm-tour-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fm-tour-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  margin-top: 0.75rem;
+}
+
+.fm-tour-count {
+  color: var(--fm-sand-dim);
+  direction: ltr;
+  font-family: var(--fm-font-en);
+  font-size: 0.4em;
+  margin-inline-end: 0.35rem;
+}
+
+.fm-tour-dot {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid var(--fm-sand-dim);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.fm-tour-dot.is-active { border-color: var(--fm-green); background: var(--fm-green); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .fm-logo-row {
   display: flex;
   align-items: center;
@@ -367,15 +529,68 @@ body.reveal-viewport {
   margin-top: 2.2rem;
 }
 
-/* Both supplied logos are dark artwork on transparency, so they need a light
-   plate to survive the deck's near-black background. */
 .fm-logo-row img {
-  height: 70px;
+  height: 86px;
   width: auto;
   display: block;
   background: #fff;
   border-radius: 8px;
   padding: 10px 16px;
+}
+
+.fm-logo-row .fm-logo-vision { height: 116px; padding: 12px 20px; }
+.fm-logo-row .fm-logo-farm-marshal { height: 86px; }
+
+.fm-close-attribution {
+  font-size: 0.5em !important;
+  color: var(--fm-sand) !important;
+  font-weight: 600;
+}
+
+.fm-title-partners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  margin-top: 1.2rem;
+}
+
+.fm-title-partners img {
+  display: block;
+  height: 66px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 6px;
+  padding: 8px 14px;
+}
+
+.fm-title-partner-name {
+  font-size: 0.6em;
+  margin-bottom: 0.8rem;
+}
+
+.reveal .slides section .fm-footnote.fm-title-ministry {
+  font-size: 0.46em;
+}
+
+.fm-copyright-mark {
+  position: fixed;
+  top: 1.75rem;
+  inset-inline-end: 1.3rem;
+  z-index: 50;
+  display: block;
+  max-width: 160px;
+  max-height: 64px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.94;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 4px;
+  padding: 6px 10px;
+  pointer-events: none;
 }
 
 /* Background scrim so text stays readable over video/imagery --------------- */
@@ -394,6 +609,48 @@ body.reveal-viewport {
 }
 
 .fm-scrim > * { position: relative; z-index: 1; }
+
+.reveal .slides section.fm-evidence-motion {
+  overflow: hidden;
+}
+
+.reveal .slides section.fm-evidence-motion::before,
+.reveal .slides section.fm-evidence-motion::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-position: center;
+  background-size: cover;
+}
+
+.reveal .slides section.fm-evidence-motion::before {
+  background-image: linear-gradient(rgba(7, 13, 10, 0.76), rgba(7, 13, 10, 0.86)), url('../assets/images/approved/Frame 1 — Evidence.jpeg');
+  animation: fm-evidence-first 8s ease-in-out infinite;
+}
+
+.reveal .slides section.fm-evidence-motion::after {
+  background-image: linear-gradient(rgba(7, 13, 10, 0.76), rgba(7, 13, 10, 0.86)), url('../assets/images/approved/Frame 2 — Action.jpeg');
+  animation: fm-evidence-second 8s ease-in-out infinite;
+}
+
+.reveal .slides section.fm-evidence-motion > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fm-evidence-first {
+  0%, 22% { opacity: 1; }
+  28%, 72% { opacity: 0; }
+  78%, 100% { opacity: 1; }
+}
+
+@keyframes fm-evidence-second {
+  0%, 22% { opacity: 0; }
+  28%, 72% { opacity: 1; }
+  78%, 100% { opacity: 0; }
+}
 
 /* Badges ------------------------------------------------------------------ */
 

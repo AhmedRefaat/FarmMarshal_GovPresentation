@@ -42,13 +42,17 @@
              data-background-video-muted
              data-background-size="cover"
              data-background-image="assets/images/optimized/farm-aerial.jpg">
-      <p class="fm-eyebrow">Al Sarrani Group &times; Oriel Company</p>
+      <p class="fm-eyebrow fm-title-partner-name">Al Sarrani Group &times; Oriel Company</p>
       <h1>Farm Marshal</h1>
-      <p class="fm-lead" style="max-width:38ch;margin-inline:auto;">
+      <p class="fm-lead" style="max-width:44ch;margin-inline:auto;">
         From Observation to Evidence.<br>
-        A supervised pilot proposal for the Kingdom of Saudi Arabia.
+        A proposal to launch an initial operational phase under specialist supervision in the Kingdom of Saudi Arabia.
       </p>
-      <p class="fm-footnote">
+      <div class="fm-title-partners" aria-label="Solution partners">
+        <img src="assets/logos/oriel.png" alt="Oriel Company">
+        <img src="assets/logos/basekat.jpeg" alt="Basekat">
+      </div>
+      <p class="fm-footnote fm-title-ministry">
         Ministry of Environment, Water &amp; Agriculture &middot; Ministry of Interior &middot; Ministry of Defense
       </p>
       <aside class="notes">
@@ -65,6 +69,8 @@
     <!-- SLIDE 2 — Concept film                                             -->
     <!-- ================================================================== -->
     <section id="video" class="is-centered">
+      <p class="fm-eyebrow">Before we begin</p>
+      <h2 style="margin-bottom:1rem;">The idea in four minutes</h2>
       <video
         data-fm-video
         data-fm-autoplay="false"
@@ -73,14 +79,10 @@
         preload="metadata"
         poster="assets/images/optimized/title-plate.jpg"
         aria-label="Farm Marshal concept film"
-        style="max-height:76vh;width:auto;max-width:100%;border-radius:10px;">
+        style="max-height:66vh;width:auto;max-width:100%;border-radius:10px;">
         <source src="assets/video/concept-film.mp4" type="video/mp4">
         Your browser cannot play this video.
       </video>
-      <p class="fm-note" style="text-align:center;margin-inline:auto;">
-        Place the final render at <code>assets/video/concept-film.mp4</code>.
-        Until then this slide shows the title plate — see <code>docs/SCREENSHOT_GUIDE.md</code>.
-      </p>
       <aside class="notes">
         <h4>4:00. Full screen, lights down.</h4>
         <p>Do not narrate. Do not apologise for it. Do not say "this is just a draft."</p>
@@ -166,9 +168,9 @@
     <!-- ================================================================== -->
     <!-- SLIDE 5 — One evidence chain                                       -->
     <!-- ================================================================== -->
-    <section id="evidence-chain">
+    <section id="evidence-chain" class="fm-evidence-motion">
       <p class="fm-eyebrow">What Farm Marshal is</p>
-      <h2>One evidence chain</h2>
+      <h2>Connected evidence from diagnosis to decision and action</h2>
 
       <div class="fm-split is-narrow-start" style="margin-top:0.5rem;">
         <div>
@@ -208,7 +210,7 @@
     <!-- SLIDE 6 — Three layers                                             -->
     <!-- ================================================================== -->
     <section id="layers">
-      <p class="fm-eyebrow">Honest about the tools</p>
+      <p class="fm-eyebrow">The tools we use</p>
       <h2>Three layers, three different jobs</h2>
 
       <table class="fm-table">
@@ -248,7 +250,38 @@
     </section>
 
     <!-- ================================================================== -->
-    <!-- SLIDE 7 — Demo: case opens                                         -->
+    <!-- SLIDE 7 — AI capability                                            -->
+    <!-- ================================================================== -->
+    <section id="ai-capability" class="fm-ai-capability">
+      <p class="fm-eyebrow">Artificial intelligence</p>
+      <h2>What the AI does and does not do</h2>
+      <div class="fm-split">
+        <div>
+          <h3 style="color:var(--fm-green);">Does</h3>
+          <ul class="fm-list">
+            <li><strong>Rank farm zones by how far their performance differs from their usual historic pattern.</strong></li>
+            <li>Identify priority cases and route them to specialists</li>
+            <li>Improve with every validated inspection</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:var(--fm-alert);">Does not</h3>
+          <ul class="fm-list">
+            <li class="is-no">Approve a treatment</li>
+            <li class="is-no">Close a case</li>
+            <li class="is-no">Carry legal or commercial accountability</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        <p>"The first version does not depend on perfect AI diagnosis. Qualified experts remain
+           responsible. The investment is justified by documentation, transparency, faster
+           inspection and expert supervision even before AI matures."</p>
+      </aside>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 8 — Demo: case opens                                         -->
     <!-- ================================================================== -->
     <section id="demo-open">
       <p class="fm-eyebrow">Live demonstration &middot; 1 of 3</p>
@@ -316,8 +349,11 @@
       <ul class="fm-list" style="margin-top:1.6rem;max-width:54ch;">
         <li>The farm's own agronomist keeps the decision — we extend his reach, not replace him</li>
         <li>He reviews the whole estate from his screen, and goes to the field only where his presence is genuinely warranted</li>
-        <li>A case that is new to him is escalated to a worldwide expert network</li>
-        <li>That network is vetted: academic qualification, crop specialisation, and a rating built from past recommendations</li>
+        <li>When a case carries unfamiliar detail, the answer does not stop at one person's experience; it extends to a worldwide network of experts.
+          <ul class="fm-sublist">
+            <li>The network is vetted: academic qualification, crop specialisation, and a rating built from past recommendations</li>
+          </ul>
+        </li>
       </ul>
 
       <aside class="notes">
@@ -330,7 +366,7 @@
            across it, and that he has somewhere to turn when a case falls outside his experience."</p>
         <p>The recommendation stays attributable to a qualified person who is accountable for it.
            AI ranks where to look first — it does not decide. Expect "is this AI making the
-           decisions?" and answer it here rather than waiting. Appendix A3 has the detail.</p>
+           decisions?" and answer it here rather than waiting. The AI slide has the detail.</p>
       </aside>
     </section>
 
@@ -338,6 +374,7 @@
     <!-- SLIDE 9 — Demo: verified closure                                   -->
     <!-- ================================================================== -->
     <section id="demo-close">
+      <section>
       <p class="fm-eyebrow">Live demonstration &middot; 3 of 3</p>
       <h2>A task with a deadline, tracked to completion</h2>
 
@@ -377,10 +414,80 @@
         <p>For MEWA this is extension services. For MOI it is an audit trail. For MOD it is a
            chain of custody. Say it once; all three hear their own version.</p>
       </aside>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- SLIDE 9.2 — Platform walkthrough (Down from the prior slide) -->
+      <!-- ============================================================== -->
+      <section id="platform-tour" class="fm-platform-tour" data-fm-tour data-fm-tour-interval="4800">
+      <p class="fm-eyebrow">Platform walkthrough</p>
+      <h2>From owner to worker: every step is visible and recorded</h2>
+
+      <div class="fm-tour-layout">
+        <div class="fm-tour-copy">
+          <p class="fm-tour-role" data-fm-tour-role>Farm owner</p>
+          <h3 data-fm-tour-title>A live view of the farm</h3>
+          <p data-fm-tour-detail>See farm activity and the cases that require a decision in one place.</p>
+        </div>
+
+        <div class="fm-tour-screen" aria-live="polite">
+          <figure class="fm-tour-frame is-active" data-fm-tour-frame data-role="owner" data-title="A complete farm overview" data-detail="The owner sees every farm and its status from one dashboard.">
+            <img src="assets/images/webapp/owner-farms-overview.png" alt="Farm-owner dashboard showing farm overview and status">
+          </figure>
+          <figure class="fm-tour-frame" data-fm-tour-frame data-role="owner" data-title="Task list and priorities" data-detail="The owner follows open tasks, their priority and progress across the farm.">
+            <img src="assets/images/webapp/owner-task-list-view.png" alt="Farm-owner task list">
+          </figure>
+          <figure class="fm-tour-frame" data-fm-tour-frame data-role="owner" data-title="Every task in detail" data-detail="The owner can review a task, its owner, status and associated evidence.">
+            <img src="assets/images/webapp/owner_task_view.png" alt="Task detail in the farm-owner interface">
+          </figure>
+          <figure class="fm-tour-frame" data-fm-tour-frame data-role="owner" data-title="Financial visibility" data-detail="The owner connects field work to costs and financial impact for informed decisions.">
+            <img src="assets/images/webapp/owner-financial-view.png" alt="Financial dashboard in the farm-owner interface">
+          </figure>
+          <figure class="fm-tour-frame" data-fm-tour-frame data-role="owner" data-title="External expertise when needed" data-detail="The owner can bring in an external expert while the case and its record stay in the platform.">
+            <img src="assets/images/webapp/Owner-External-expert-view.png" alt="Farm-owner interface for engaging an external expert">
+          </figure>
+          <figure class="fm-tour-frame" data-fm-tour-frame data-role="moderator" data-title="Farms under responsibility" data-detail="The moderator sees the farms and zones within their responsibility.">
+            <img src="assets/images/webapp/Moderator-Responsibility-farm-view.png" alt="Farm-moderator view of farms under responsibility">
+          </figure>
+          <figure class="fm-tour-frame" data-fm-tour-frame data-role="moderator" data-title="Manage the work list" data-detail="The moderator opens tasks, assigns them and follows the team's progress from one screen.">
+            <img src="assets/images/webapp/Moderator-Task-list.png" alt="Task list in the farm-moderator interface">
+          </figure>
+          <figure class="fm-tour-frame" data-fm-tour-frame data-role="moderator" data-title="Bring in an external expert" data-detail="The moderator can refer a case to external expertise with its complete record and evidence.">
+            <img src="assets/images/webapp/moderator-external-expert-view.png" alt="Farm-moderator interface for engaging an external expert">
+          </figure>
+          <figure class="fm-tour-frame" data-fm-tour-frame data-role="worker" data-title="Worker task list" data-detail="The worker sees tasks in a simple interface, ordered by priority and status.">
+            <img src="assets/images/webapp/Work-Task-List.png" alt="Field-worker task list">
+          </figure>
+          <figure class="fm-tour-frame" data-fm-tour-frame data-role="worker" data-title="Complete and document the work" data-detail="The worker opens the task and records the completed work so the result reaches review in full.">
+            <img src="assets/images/webapp/worker_Task_view.png" alt="Task detail in the field-worker interface">
+          </figure>
+        </div>
+      </div>
+
+      <div class="fm-tour-controls" aria-label="Platform walkthrough steps">
+        <span class="fm-tour-count" data-fm-tour-count>1 / 10</span>
+        <button type="button" class="fm-tour-dot is-active" data-fm-tour-index="0" title="Owner overview"><span class="sr-only">Owner overview</span></button>
+        <button type="button" class="fm-tour-dot" data-fm-tour-index="1" title="Owner task list"><span class="sr-only">Owner task list</span></button>
+        <button type="button" class="fm-tour-dot" data-fm-tour-index="2" title="Owner task detail"><span class="sr-only">Owner task detail</span></button>
+        <button type="button" class="fm-tour-dot" data-fm-tour-index="3" title="Owner financial view"><span class="sr-only">Owner financial view</span></button>
+        <button type="button" class="fm-tour-dot" data-fm-tour-index="4" title="Owner external-expert view"><span class="sr-only">Owner external-expert view</span></button>
+        <button type="button" class="fm-tour-dot" data-fm-tour-index="5" title="Moderator responsibility view"><span class="sr-only">Moderator responsibility view</span></button>
+        <button type="button" class="fm-tour-dot" data-fm-tour-index="6" title="Moderator task list"><span class="sr-only">Moderator task list</span></button>
+        <button type="button" class="fm-tour-dot" data-fm-tour-index="7" title="Moderator external-expert view"><span class="sr-only">Moderator external-expert view</span></button>
+        <button type="button" class="fm-tour-dot" data-fm-tour-index="8" title="Worker task list"><span class="sr-only">Worker task list</span></button>
+        <button type="button" class="fm-tour-dot" data-fm-tour-index="9" title="Worker task detail"><span class="sr-only">Worker task detail</span></button>
+      </div>
+
+      <aside class="notes">
+        <p>Do not read every screen. Start with the owner: "See what needs a decision." Then the
+           moderator: "Open the work and follow it." Then the worker: "Record what happened on
+           site." Finish with the expert: "Approve the result from evidence, not verbal assurance."</p>
+      </aside>
+      </section>
     </section>
 
     <!-- ================================================================== -->
-    <!-- SLIDE 10 — For Agriculture                                         -->
+    <!-- SLIDE 12 — For Agriculture                                         -->
     <!-- ================================================================== -->
     <section id="track-mewa"
              class="fm-scrim"
@@ -429,9 +536,8 @@
         </tbody>
       </table>
 
-      <p class="fm-note">
-        What the Ministry sees is aggregated to region and crop level. Named-farm data stays
-        with its owner, and is shared only with consent or on a defined legal basis.
+      <p class="fm-note is-single-line" style="max-width:none;margin-top:2.6rem;">
+        What the Ministry sees is aggregated to region and crop level. Named-farm data stays with its owner, and is shared only with consent or on a defined legal basis.
       </p>
 
       <aside class="notes">
@@ -498,7 +604,7 @@
           </tr>
           <tr>
             <td data-label="Control">Controlled imagery access</td>
-            <td data-label="Enforced">Every view and export is attributable to a named account</td>
+            <td data-label="Enforced">Every view and export is attributable to a known owner and a defined farm</td>
           </tr>
         </tbody>
       </table>
@@ -536,27 +642,27 @@
       <div class="fm-grid cols-2" style="margin-top:0.6rem;">
         <div class="fm-card">
           <h3>Data residency</h3>
-          <p>Imagery and telemetry stored inside the Kingdom. No terrain imagery leaves Saudi jurisdiction.</p>
+          <p>Imagery and telemetry are stored inside the Kingdom. No terrain imagery leaves the Kingdom.</p>
         </div>
         <div class="fm-card">
           <h3>No foreign telemetry channel</h3>
           <p>Flight and payload data do not transit a foreign manufacturer's cloud. This constrains hardware selection.</p>
         </div>
         <div class="fm-card">
-          <h3>Localization path</h3>
-          <p>Phase 1 uses available platforms. Phase 2 defines a Saudi-content roadmap for airframe and payload.</p>
+          <h3>Knowledge-transfer path</h3>
+          <p>Phase 1 benefits from ready solutions; phase 2 focuses on knowledge transfer and national capability to operate and develop the system.</p>
         </div>
         <div class="fm-card">
-          <h3>National operator pool</h3>
-          <p>Certified Saudi remote pilots and mission planning as a domestic skill base.</p>
+          <h3>Qualified operating team</h3>
+          <p>Certified pilots, trained through specialist programmes to plan missions and operate drones safely and efficiently.</p>
         </div>
         <div class="fm-card">
           <h3>Airspace discipline</h3>
           <p>Routine civil missions flown correctly build the procedural culture that matters under pressure.</p>
         </div>
         <div class="fm-card is-alert">
-          <h3>Dual-use, stated openly</h3>
-          <p>Wide-area monitoring shares tooling with wide-area awareness. We raise it rather than let you find it.</p>
+          <h3>Responsible use, stated openly</h3>
+          <p>We state the limits of monitoring technology from the outset and direct it to agricultural purposes under clear data-protection and privacy controls.</p>
         </div>
       </div>
 
@@ -576,7 +682,11 @@
     <!-- ================================================================== -->
     <!-- SLIDE 13 — Governance                                              -->
     <!-- ================================================================== -->
-    <section id="governance">
+    <section id="governance"
+         class="fm-scrim fm-governance-background"
+         data-background-image="assets/images/approved/governance slide background.jpeg"
+         data-background-size="cover"
+         data-background-position="center">
       <p class="fm-eyebrow">Governance</p>
       <h2>Who controls what</h2>
 
@@ -617,16 +727,15 @@
         </tbody>
       </table>
 
-      <p class="fm-note">
-        Defined retention periods &middot; immutable audit log &middot;
-        AI never replaces the responsible expert's decision — it only ranks where to look first.
+      <p class="fm-note is-single-line" style="max-width:none;margin-top:2.6rem;">
+        Defined retention periods &middot; immutable audit log &middot; AI never replaces the responsible expert's decision — it only ranks where to look first.
       </p>
 
       <aside class="notes">
         <h4>Say</h4>
         <p>"The farm owner owns the data. Access by any other party — including us — is logged
            and requires a defined basis."</p>
-        <p>Appendix A6 covers retention, deletion and lawful access if MOI or MOD press.</p>
+        <p>Appendix A4 covers retention, deletion and lawful access if MOI or MOD press.</p>
       </aside>
     </section>
 
@@ -634,6 +743,7 @@
     <!-- SLIDE 14 — Flight authorization chain                              -->
     <!-- ================================================================== -->
     <section id="flight-chain">
+      <section>
       <p class="fm-eyebrow">Compliance</p>
       <h2>The flight authorization chain</h2>
 
@@ -649,16 +759,17 @@
       </div>
 
       <p class="fm-lead" style="margin-top:2rem;max-width:52ch;">
-        There is no step in this chain that a farm owner can skip by making a phone call.
+        There is no step in this chain that can be skipped.
       </p>
+      <p class="fm-vertical-cue" aria-hidden="true">↓ more</p>
 
       <aside class="notes">
         <h4>Say the sentence on the slide, verbatim.</h4>
         <p>It is the single most reassuring thing an Interior representative will hear all
            meeting, because it says the control is structural rather than procedural.</p>
-        <p>Appendix A7 holds the incident, lost-link and emergency-landing procedures.</p>
+        <p>Appendix A5 holds the incident, lost-link and emergency-landing procedures.</p>
       </aside>
-    </section>
+      </section>
 
     <!-- ================================================================== -->
     <!-- SLIDE 15 — What we are not asking for                              -->
@@ -680,6 +791,7 @@
         <p>Explicitly naming what you are not asking for is what converts "let me consult
            internally" into "send me the protocol." Do not rush it — read all five lines.</p>
       </aside>
+    </section>
     </section>
 
     <!-- ================================================================== -->
@@ -758,7 +870,7 @@
         <h4>If asked to break the number down</h4>
         <p>Do not invent a split across the four drivers. Say: "Those four are the components of
            the value. How much each one contributes varies by crop and region — which is exactly
-           what the pilot measures." Appendix A9 exposes every assumption.</p>
+           what the pilot measures." Appendix A7 exposes every assumption.</p>
         <h4>Why this framing</h4>
         <p>Volunteering your own kill criterion is the strongest credibility move available to a
            first-time vendor in front of a regulator.</p>
@@ -898,11 +1010,11 @@
       </p>
 
       <div class="fm-logo-row">
-        <img src="assets/logos/farm-marshal.png" alt="Farm Marshal">
-        <img src="assets/logos/vision-2030.png" alt="Saudi Vision 2030">
+        <img class="fm-logo-farm-marshal" src="assets/logos/farm-marshal.png" alt="Farm Marshal">
+        <img class="fm-logo-vision" src="assets/logos/vision-2030.png" alt="Saudi Vision 2030">
       </div>
 
-      <p class="fm-footnote" style="text-align:center;">
+      <p class="fm-footnote fm-close-attribution" style="text-align:center;">
         Farm Marshal &middot; Al Sarrani Group &times; Oriel Company
       </p>
 
@@ -962,35 +1074,6 @@
 
       <section>
         <p class="fm-eyebrow">A3</p>
-        <h2>What the AI does and does not do</h2>
-        <div class="fm-split">
-          <div>
-            <h3 style="color:var(--fm-green);">Does</h3>
-            <ul class="fm-list">
-              <li>Rank zones by how much they deviate from the farm's own history</li>
-              <li>Flag candidate anomalies for human attention</li>
-              <li>Improve with every validated inspection</li>
-            </ul>
-          </div>
-          <div>
-            <h3 style="color:var(--fm-alert);">Does not</h3>
-            <ul class="fm-list">
-              <li class="is-no">Issue a diagnosis</li>
-              <li class="is-no">Approve a treatment</li>
-              <li class="is-no">Close a case</li>
-              <li class="is-no">Carry legal or commercial accountability</li>
-            </ul>
-          </div>
-        </div>
-        <aside class="notes">
-          <p>"The first version does not depend on perfect AI diagnosis. Qualified experts remain
-             responsible. The investment is justified by documentation, transparency, faster
-             inspection and expert supervision even before AI matures."</p>
-        </aside>
-      </section>
-
-      <section>
-        <p class="fm-eyebrow">A4</p>
         <h2>Heat, dust and salt</h2>
         <p class="fm-lead" style="max-width:60ch;">
           Hardware qualified for European or Egyptian conditions fails in the Gulf. This is a
@@ -1014,42 +1097,7 @@
       </section>
 
       <section>
-        <p class="fm-eyebrow">A5</p>
-        <h2>Why not an existing drone company?</h2>
-        <table class="fm-table">
-          <thead>
-            <tr>
-              <th scope="col">Provider</th>
-              <th scope="col">Positioning</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-label="Provider">Terra Drone Arabia</td>
-              <td data-label="Positioning">Drone and geospatial services, explicit agriculture offering. Riyadh, est. 2023.</td>
-            </tr>
-            <tr>
-              <td data-label="Provider">FalconViz</td>
-              <td data-label="Positioning">KAUST-origin drone data and digitization, precision agriculture among sectors.</td>
-            </tr>
-            <tr>
-              <td data-label="Provider">KOKBA, NineTenths, Zain Drone</td>
-              <td data-label="Positioning">Equipment, integration and drone-as-a-service capability.</td>
-            </tr>
-            <tr class="is-highlight">
-              <td data-label="Provider"><strong>Farm Marshal</strong></td>
-              <td data-label="Positioning"><strong>The accountability layer above them: evidence chain, expert review, verified closure. They are execution partners, not substitutes.</strong></td>
-            </tr>
-          </tbody>
-        </table>
-        <aside class="notes">
-          <p>"They provide drone data services. We provide the layer that turns data into a
-             verified, closed work order. We would rather contract them than compete with them."</p>
-        </aside>
-      </section>
-
-      <section>
-        <p class="fm-eyebrow">A6</p>
+        <p class="fm-eyebrow">A4</p>
         <h2>Data retention, deletion and lawful access</h2>
         <ul class="fm-list">
           <li>Farm imagery and telemetry stored in an approved in-Kingdom environment</li>
@@ -1061,7 +1109,7 @@
       </section>
 
       <section>
-        <p class="fm-eyebrow">A7</p>
+        <p class="fm-eyebrow">A5</p>
         <h2>Incident and emergency procedures</h2>
         <ul class="fm-list">
           <li>Lost-link procedure: defined return-to-home behaviour and holding pattern</li>
@@ -1074,7 +1122,7 @@
       </section>
 
       <section>
-        <p class="fm-eyebrow">A8</p>
+        <p class="fm-eyebrow">A6</p>
         <h2>Phase roadmap</h2>
         <div class="fm-chain">
           <div class="fm-chain-step is-active">Phase 1<br>Supervised pilot<br>one season</div>
@@ -1088,7 +1136,7 @@
       </section>
 
       <section>
-        <p class="fm-eyebrow">A9</p>
+        <p class="fm-eyebrow">A7</p>
         <h2>Economic model — assumptions exposed</h2>
         <table class="fm-table">
           <thead>
@@ -1146,7 +1194,7 @@
       </section>
 
       <section>
-        <p class="fm-eyebrow">A10</p>
+        <p class="fm-eyebrow">A8</p>
         <h2>What we are, and what we are not</h2>
         <p class="fm-statement" style="font-size:1.2em;max-width:44ch;margin:0;">
           "We are not agricultural experts, and we will never claim to be. We build the system

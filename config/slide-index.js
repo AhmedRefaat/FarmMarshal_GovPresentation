@@ -8,8 +8,18 @@
  * it and fall back to the full deck rather than hiding the wrong slides.
  */
 window.FM_SLIDE_INDEX = {
-  fingerprint: '894bd4d31d5d',
+  fingerprint: 'c9a22ab7df28',
   groups: [
+    {
+      "id": "demo-close",
+      "en": "Demo — task tracked to completion",
+      "ar": "العرض — متابعة حتى الإنجاز"
+    },
+    {
+      "id": "flight-chain",
+      "en": "Flight authorization chain",
+      "ar": "سلسلة تصريح الطيران"
+    },
     {
       "id": "appendix",
       "en": "Appendix",
@@ -26,8 +36,8 @@ window.FM_SLIDE_INDEX = {
     {
       "key": "video",
       "group": null,
-      "en": "Concept film",
-      "ar": "الفيلم التعريفي"
+      "en": "The idea in four minutes",
+      "ar": "الفكرة في أربع دقائق"
     },
     {
       "key": "reframe",
@@ -44,14 +54,20 @@ window.FM_SLIDE_INDEX = {
     {
       "key": "evidence-chain",
       "group": null,
-      "en": "One evidence chain",
-      "ar": "سلسلة دليل واحدة"
+      "en": "Connected evidence from diagnosis to decision and action",
+      "ar": "سلسلة أدلة مترابطة تقود من التشخيص إلى القرار والتنفيذ"
     },
     {
       "key": "layers",
       "group": null,
       "en": "Three layers, three different jobs",
       "ar": "ثلاث طبقات، وثلاث وظائف مختلفة"
+    },
+    {
+      "key": "ai-capability",
+      "group": null,
+      "en": "What the AI does and does not do",
+      "ar": "ما يفعله الذكاء الاصطناعي وما لا يفعله"
     },
     {
       "key": "demo-open",
@@ -62,14 +78,20 @@ window.FM_SLIDE_INDEX = {
     {
       "key": "demo-expert",
       "group": null,
-      "en": "A named expert takes responsibility",
-      "ar": "خبير معروف بالاسم يتحمل المسؤولية"
+      "en": "The farm's own expert, backed by a global network",
+      "ar": "خبير المزرعة أولاً، وشبكة عالمية تسنده"
     },
     {
-      "key": "demo-close",
-      "group": null,
-      "en": "Closed against evidence, not against a phone call",
-      "ar": "إغلاق بالدليل، لا بمكالمة هاتفية"
+      "key": "demo-close/1",
+      "group": "demo-close",
+      "en": "A task with a deadline, tracked to completion",
+      "ar": "مهمة بموعد محدد، ومتابعة حتى الإنجاز"
+    },
+    {
+      "key": "demo-close/2",
+      "group": "demo-close",
+      "en": "From owner to worker: every step is visible and recorded",
+      "ar": "من المالك إلى العامل: كل خطوة مرئية وموثّقة"
     },
     {
       "key": "track-mewa",
@@ -81,7 +103,7 @@ window.FM_SLIDE_INDEX = {
       "key": "track-moi",
       "group": null,
       "en": "Every flight registered.Every pilot identified.Every track retained.",
-      "ar": "كل رحلة مسجّلة.وكل طيّار معروف.وكل مسار محفوظ."
+      "ar": "كل رحلة مسجّلة.وكل طيار مسيّرات معروف.وكل مسار محفوظ."
     },
     {
       "key": "track-mod",
@@ -96,28 +118,28 @@ window.FM_SLIDE_INDEX = {
       "ar": "من يتحكم بماذا"
     },
     {
-      "key": "flight-chain",
-      "group": null,
+      "key": "flight-chain/1",
+      "group": "flight-chain",
       "en": "The flight authorization chain",
       "ar": "سلسلة تصريح الطيران"
     },
     {
-      "key": "not-asking",
-      "group": null,
+      "key": "flight-chain/2",
+      "group": "flight-chain",
       "en": "What we are not asking for",
       "ar": "ما لا نطلبه"
     },
     {
       "key": "economics",
       "group": null,
-      "en": "Modelled economics, 1,000 hectares",
-      "ar": "نموذج اقتصادي لألف هكتار"
+      "en": "What a 1,000-hectare farm gains",
+      "ar": "ما الذي تكسبه مزرعة ألف هكتار"
     },
     {
       "key": "localization",
       "group": null,
       "en": "What this builds in the Kingdom",
-      "ar": "ما الذي يبنيه هذا داخل المملكة"
+      "ar": "ما القدرات التي يؤسس لها المشروع داخل المملكة؟"
     },
     {
       "key": "the-ask",
@@ -152,50 +174,38 @@ window.FM_SLIDE_INDEX = {
     {
       "key": "appendix/4",
       "group": "appendix",
-      "en": "What the AI does and does not do",
-      "ar": "ما يفعله الذكاء الاصطناعي وما لا يفعله"
-    },
-    {
-      "key": "appendix/5",
-      "group": "appendix",
       "en": "Heat, dust and salt",
       "ar": "الحرارة والغبار والملوحة"
     },
     {
-      "key": "appendix/6",
-      "group": "appendix",
-      "en": "Why not an existing drone company?",
-      "ar": "لماذا لا شركة طائرات مسيّرة قائمة؟"
-    },
-    {
-      "key": "appendix/7",
+      "key": "appendix/5",
       "group": "appendix",
       "en": "Data retention, deletion and lawful access",
       "ar": "الاحتفاظ بالبيانات وحذفها والوصول النظامي"
     },
     {
-      "key": "appendix/8",
+      "key": "appendix/6",
       "group": "appendix",
       "en": "Incident and emergency procedures",
       "ar": "إجراءات الحوادث والطوارئ"
     },
     {
-      "key": "appendix/9",
+      "key": "appendix/7",
       "group": "appendix",
       "en": "Phase roadmap",
       "ar": "خارطة المراحل"
     },
     {
-      "key": "appendix/10",
+      "key": "appendix/8",
       "group": "appendix",
       "en": "Economic model — assumptions exposed",
       "ar": "النموذج الاقتصادي — الافتراضات مكشوفة"
     },
     {
-      "key": "appendix/11",
+      "key": "appendix/9",
       "group": "appendix",
       "en": "What we are, and what we are not",
-      "ar": "من نحن، ومن لسنا"
+      "ar": "من نحن"
     }
   ],
 };

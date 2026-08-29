@@ -148,6 +148,10 @@ body.reveal-viewport {
   white-space: nowrap;
 }
 
+#cost .fm-note.is-single-line {
+  font-size: 0.52em;
+}
+
 /* Specificity is deliberate: reveal.css sets position:relative on slide
    children, which would otherwise drop the footnote into the flex flow and
    collide it with the body copy above. */

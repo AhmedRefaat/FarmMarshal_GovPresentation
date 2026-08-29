@@ -49,7 +49,7 @@ window.FM_SLIDE_INDEX = {
       "key": "cost",
       "group": null,
       "en": "Six failures, one root cause",
-      "ar": "ستة إخفاقات، وسبب واحد"
+      "ar": "ستة عراقيل، وسبب واحد"
     },
     {
       "key": "evidence-chain",

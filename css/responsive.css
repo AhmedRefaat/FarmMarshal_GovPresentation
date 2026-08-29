@@ -62,6 +62,10 @@
 
   .fm-statement { font-size: 1.3em; max-width: none; }
   .fm-lead { max-width: none; }
+  #cost .fm-note.is-single-line {
+    font-size: 0.58em;
+    white-space: normal;
+  }
   .fm-ai-capability .fm-list { font-size: 0.8em; }
   .fm-appendix-roadmap .fm-chain-step { font-size: 0.78em; }
   .fm-appendix-roadmap .fm-large-note { font-size: 0.72em; }

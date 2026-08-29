@@ -34,9 +34,9 @@ body.fm-body[dir='rtl'] { font-family: var(--fm-font-ar); }
 }
 
 .fm-page-mark {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 1.6rem;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 1.1rem;
   opacity: 0.9;
 }
 

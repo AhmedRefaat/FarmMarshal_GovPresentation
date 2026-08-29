@@ -87,6 +87,9 @@ body.reveal-viewport {
 .reveal h1 { font-size: 2.15em; }
 .reveal h2 { font-size: 1.55em; }
 .reveal h3 { font-size: 1.1em; }
+.reveal h1 strong,
+.reveal h2 strong,
+.reveal h3 strong { font-weight: 700; }
 
 .reveal h2 .fm-accent,
 .reveal h1 .fm-accent {
@@ -196,6 +199,8 @@ body.reveal-viewport {
   letter-spacing: 0.01em;
 }
 
+.fm-card h3 strong { color: inherit; }
+
 .fm-card p {
   font-size: 0.52em;
   color: var(--fm-sand);
@@ -211,7 +216,7 @@ body.reveal-viewport {
 .reveal table.fm-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.5em;
+  font-size: 0.54em;
   margin: 0;
 }
 
@@ -236,6 +241,19 @@ body.reveal-viewport {
 .reveal table.fm-table tbody tr:last-child td { border-bottom: none; }
 .reveal table.fm-table td.is-num { text-align: end; font-variant-numeric: tabular-nums; }
 .reveal table.fm-table tr.is-highlight td { background: rgba(46, 158, 107, 0.11); }
+
+/* Dense ministry tables need to remain readable after Reveal scales them to a
+   projector or a laptop screen. These slides have enough vertical room for a
+   larger, deliberately wrapped treatment. */
+.reveal #track-mewa .fm-table,
+.reveal #governance .fm-table { font-size: 0.62em; }
+
+.reveal #track-mewa .fm-note.is-single-line,
+.reveal #governance .fm-note.is-single-line {
+  font-size: 0.55em;
+  line-height: 1.55;
+  white-space: normal;
+}
 
 /* Lists ------------------------------------------------------------------- */
 
@@ -334,6 +352,11 @@ body.reveal-viewport {
 .reveal #flight-chain .fm-chain-step { font-size: 0.5em; }
 .fm-appendix-roadmap .fm-chain-step { font-size: 0.52em; }
 
+.reveal #demo-close > section:first-child .fm-chain-step {
+  font-size: 0.58em;
+  padding: 1.1rem 0.8rem;
+}
+
 .fm-vertical-cue {
   position: absolute;
   inset-inline: 0;
@@ -343,6 +366,12 @@ body.reveal-viewport {
   color: var(--fm-sand-dim);
   font-size: 0.32em;
   letter-spacing: 0.08em;
+}
+
+.reveal #demo-close > section:first-child .fm-vertical-cue {
+  font-size: 0.48em;
+  font-weight: 600;
+  color: var(--fm-green);
 }
 
 /* Stat block -------------------------------------------------------------- */
@@ -385,6 +414,12 @@ body.reveal-viewport {
   padding: 0.75rem 1rem;
   border-top: 1px solid var(--fm-line);
   line-height: 1.4;
+}
+
+.reveal #demo-close > section:first-child .fm-figure figcaption {
+  font-size: 0.48em;
+  color: var(--fm-sand);
+  padding: 0.85rem 1rem;
 }
 
 .fm-phone-row {

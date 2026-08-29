@@ -79,7 +79,7 @@ window.FM_SLIDE_INDEX = {
       "key": "demo-expert",
       "group": null,
       "en": "The farm's own expert, backed by a global network",
-      "ar": "خبير المزرعة أولاً، وشبكة عالمية تسنده"
+      "ar": "خبير المزرعة أولاً، و نخبة تسانده"
     },
     {
       "key": "demo-close/1",

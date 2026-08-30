@@ -72,7 +72,6 @@ window.FM_CONFIG = {
     { id: 'evidence-chain', block: 3, en: 'One evidence chain', ar: 'سلسلة دليل واحدة' },
     { id: 'layers', block: 3, en: 'Three layers, three jobs', ar: 'ثلاث طبقات' },
     { id: 'ai-capability', block: 3, en: 'What the AI does and does not do', ar: 'ما يفعله الذكاء الاصطناعي وما لا يفعله' },
-    { id: 'demo-open', block: 4, en: 'Demo — case opens', ar: 'العرض — فتح الحالة' },
     { id: 'demo-expert', block: 4, en: 'Demo — expert and network', ar: 'العرض — الخبير والشبكة' },
     { id: 'demo-close', block: 4, en: 'Demo — task tracked to completion', ar: 'العرض — متابعة حتى الإنجاز' },
     { id: 'platform-tour', block: 4, en: 'Platform walkthrough', ar: 'جولة في المنصة' },
@@ -121,7 +120,7 @@ window.FM_CONFIG = {
       noteAr: 'السرد الأساسي فقط، وتبقى الملاحق للأسئلة.',
       slides: [
         'title', 'q-and-a', 'video', 'reframe', 'cost', 'evidence-chain', 'layers', 'ai-capability',
-        'demo-open', 'demo-expert', 'demo-close/1', 'demo-close/2',
+        'demo-expert', 'demo-close/1', 'demo-close/2',
         'track-mewa', 'track-moi', 'track-mod',
         'governance', 'flight-chain/1',
         'economics/1', 'economics/2', 'economics/3',
@@ -135,7 +134,7 @@ window.FM_CONFIG = {
       noteEn: 'For when the meeting runs late and you are asked to be brief.',
       noteAr: 'حين يتأخر الاجتماع ويُطلب منك الإيجاز.',
       slides: [
-        'title', 'q-and-a', 'reframe', 'evidence-chain', 'demo-open', 'demo-close/1', 'demo-close/2',
+        'title', 'q-and-a', 'reframe', 'evidence-chain', 'demo-close/1', 'demo-close/2',
         'governance', 'close',
       ],
     },
@@ -147,7 +146,7 @@ window.FM_CONFIG = {
       noteAr: 'يحذف مسارَي الداخلية والدفاع.',
       slides: [
         'title', 'q-and-a', 'video', 'reframe', 'cost', 'evidence-chain', 'layers', 'ai-capability',
-        'demo-open', 'demo-expert', 'demo-close/1', 'demo-close/2', 'track-mewa',
+        'demo-expert', 'demo-close/1', 'demo-close/2', 'track-mewa',
          'governance', 'economics/1', 'economics/2', 'economics/3',
         'localization', 'close',
       ],
@@ -159,7 +158,7 @@ window.FM_CONFIG = {
       noteEn: 'Leads on airspace discipline and the authorization chain.',
       noteAr: 'يركّز على انضباط المجال الجوي وسلسلة التصاريح.',
       slides: [
-        'title', 'q-and-a', 'reframe', 'evidence-chain', 'ai-capability', 'demo-open', 'demo-close/1', 'demo-close/2',
+        'title', 'q-and-a', 'reframe', 'evidence-chain', 'ai-capability', 'demo-close/1', 'demo-close/2',
         'track-moi', 'governance', 'flight-chain/1',
         'localization', 'close',
       ],
@@ -171,7 +170,7 @@ window.FM_CONFIG = {
       noteEn: 'Leads on data sovereignty and hosting.',
       noteAr: 'يركّز على سيادة البيانات والاستضافة.',
       slides: [
-        'title', 'q-and-a', 'reframe', 'evidence-chain', 'ai-capability', 'demo-open', 'demo-close/1', 'demo-close/2',
+        'title', 'q-and-a', 'reframe', 'evidence-chain', 'ai-capability', 'demo-close/1', 'demo-close/2',
         'track-mod', 'governance', 'flight-chain/1',
         'localization', 'close',
       ],

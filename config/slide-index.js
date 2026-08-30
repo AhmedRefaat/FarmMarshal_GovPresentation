@@ -60,7 +60,7 @@ window.FM_SLIDE_INDEX = {
       "key": "evidence-chain",
       "group": null,
       "en": "Connected evidence from diagnosis to decision and action",
-      "ar": "سلسلة أدلة مترابطة تقود من التشخيص إلى القرار والتنفيذ"
+      "ar": "منصة واحدة تقودك من التشخيص إلى القرار والتنفيذ"
     },
     {
       "key": "layers",

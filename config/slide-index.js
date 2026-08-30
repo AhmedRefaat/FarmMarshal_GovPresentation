@@ -83,14 +83,14 @@ window.FM_SLIDE_INDEX = {
     {
       "key": "demo-close/1",
       "group": "demo-close",
-      "en": "A task with a deadline, tracked to completion",
-      "ar": "مهمة بموعد محدد، ومتابعة حتى الإنجاز"
+      "en": "From owner to worker: every step is visible and recorded",
+      "ar": "من المالك إلى العامل: كل خطوة مرئية وموثّقة"
     },
     {
       "key": "demo-close/2",
       "group": "demo-close",
-      "en": "From owner to worker: every step is visible and recorded",
-      "ar": "من المالك إلى العامل: كل خطوة مرئية وموثّقة"
+      "en": "A task with a deadline, tracked to completion",
+      "ar": "مهمة بموعد محدد، ومتابعة حتى الإنجاز"
     },
     {
       "key": "track-mewa",

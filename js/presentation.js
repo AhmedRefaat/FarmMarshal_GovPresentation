@@ -128,6 +128,8 @@
       global.FMLanguage.bindSwitcher();
       global.FMDemo.init();
       this.setupAccessibility();
+      this.setupResponseValueDialog();
+      this.setupMaturityDiagram();
       this.announceGateState();
       this.announceSelection(selection, options);
     },
@@ -198,6 +200,52 @@
           }
         }
       });
+    },
+
+    setupResponseValueDialog: function () {
+      var dialog = doc.getElementById('response-value-dialog');
+      var trigger = doc.querySelector('[data-fm-response-dialog-open]');
+      if (!dialog || !trigger || typeof dialog.showModal !== 'function') return;
+
+      function closeDialog() {
+        if (dialog.open) dialog.close();
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+
+      trigger.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (!dialog.open) {
+          dialog.showModal();
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      Array.prototype.forEach.call(
+        dialog.querySelectorAll('[data-fm-response-dialog-close]'),
+        function (button) { button.addEventListener('click', closeDialog); }
+      );
+
+      dialog.addEventListener('click', function (event) {
+        if (event.target === dialog) closeDialog();
+      });
+      dialog.addEventListener('keydown', function (event) { event.stopPropagation(); });
+      dialog.addEventListener('cancel', function () { trigger.setAttribute('aria-expanded', 'false'); });
+      dialog.addEventListener('close', function () { trigger.setAttribute('aria-expanded', 'false'); });
+    },
+
+    setupMaturityDiagram: function () {
+      var diagram = doc.querySelector('[data-fm-maturity-diagram]');
+      if (!diagram) return;
+
+      var currentFarmLevel = global.FM.get('features.currentFarmLevel', null);
+      var validLevels = ['L0', 'L1', 'L2', 'L3'];
+      var level = validLevels.indexOf(currentFarmLevel) !== -1 ? currentFarmLevel : null;
+      var markerLabel = diagram.querySelector('[data-fm-maturity-marker-label]');
+      if (level) {
+        diagram.classList.add('is-level-' + level.toLowerCase());
+        markerLabel.textContent = level + ' · مستوى مبدئي قابل للتحديث';
+      }
     },
 
     /**

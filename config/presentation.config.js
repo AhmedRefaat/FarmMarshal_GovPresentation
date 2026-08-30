@@ -31,6 +31,8 @@ window.FM_CONFIG = {
     presenterTimer: true,
     /** Target speaking time, drives the timer colour bands. */
     targetMinutes: 20,
+    /** Set to L0, L1, L2 or L3 after baseline assessment; null keeps the illustrative marker. */
+    currentFarmLevel: null,
   },
 
   reveal: {
@@ -81,10 +83,17 @@ window.FM_CONFIG = {
     { id: 'flight-chain', block: 6, en: 'Flight authorization chain', ar: 'سلسلة تصريح الطيران' },
     { id: 'not-asking', block: 6, en: 'What we are not asking for', ar: 'ما لا نطلبه' },
     { id: 'economics', block: 7, en: 'Unit economics', ar: 'الجدوى الاقتصادية' },
+    { id: 'economics-evidence', block: 11, en: 'Farm baseline', ar: 'خط أساس المزرعة' },
+    { id: 'economics-private-value', block: 7, en: 'Farm attribution', ar: 'إسناد قيمة المزرعة' },
+    { id: 'national-value', block: 7, en: 'National value', ar: 'القيمة الوطنية' },
+    { id: 'national-response', block: 7, en: 'Ministry response', ar: 'استجابة الوزارة' },
+    { id: 'farmmarshal-model', block: 11, en: 'Farm Marshal model', ar: 'نموذج فارم مارشال' },
+    { id: 'farmmarshal-cost', block: 11, en: 'Service cost and pricing', ar: 'كلفة الخدمة والتسعير' },
     { id: 'localization', block: 7, en: 'Built in the Kingdom', ar: 'التوطين' },
-    { id: 'the-ask', block: 8, en: 'The specific request', ar: 'الطلب المحدد' },
+    { id: 'the-ask', block: 11, en: 'The specific request', ar: 'الطلب المحدد' },
     { id: 'close', block: 9, en: 'Close', ar: 'الختام' },
-    { id: 'appendix', block: 10, en: 'Appendix', ar: 'الملاحق' },
+    { id: 'q-and-a', block: 10, en: 'Q&A cover', ar: 'غلاف الأسئلة والأجوبة' },
+    { id: 'appendix', block: 11, en: 'Appendix', ar: 'الملاحق' },
   ],
 
   /**
@@ -111,11 +120,13 @@ window.FM_CONFIG = {
       noteEn: 'The narrative only. Appendix stays out unless a question calls for it.',
       noteAr: 'السرد الأساسي فقط، وتبقى الملاحق للأسئلة.',
       slides: [
-        'title', 'video', 'reframe', 'cost', 'evidence-chain', 'layers', 'ai-capability',
+        'title', 'q-and-a', 'video', 'reframe', 'cost', 'evidence-chain', 'layers', 'ai-capability',
         'demo-open', 'demo-expert', 'demo-close/1', 'demo-close/2',
         'track-mewa', 'track-moi', 'track-mod',
         'governance', 'flight-chain/1', 'flight-chain/2',
-        'economics', 'localization', 'the-ask', 'close',
+        'economics/1', 'economics/2', 'economics/3',
+        'national-value/1',
+        'localization', 'close',
       ],
     },
     {
@@ -125,8 +136,8 @@ window.FM_CONFIG = {
       noteEn: 'For when the meeting runs late and you are asked to be brief.',
       noteAr: 'حين يتأخر الاجتماع ويُطلب منك الإيجاز.',
       slides: [
-        'title', 'reframe', 'evidence-chain', 'demo-open', 'demo-close/1', 'demo-close/2',
-        'governance', 'the-ask', 'close',
+        'title', 'q-and-a', 'reframe', 'evidence-chain', 'demo-open', 'demo-close/1', 'demo-close/2',
+        'governance', 'close',
       ],
     },
     {
@@ -136,9 +147,11 @@ window.FM_CONFIG = {
       noteEn: 'Drops the Interior and Defense tracks.',
       noteAr: 'يحذف مسارَي الداخلية والدفاع.',
       slides: [
-        'title', 'video', 'reframe', 'cost', 'evidence-chain', 'layers', 'ai-capability',
+        'title', 'q-and-a', 'video', 'reframe', 'cost', 'evidence-chain', 'layers', 'ai-capability',
         'demo-open', 'demo-expert', 'demo-close/1', 'demo-close/2', 'track-mewa',
-        'governance', 'economics', 'localization', 'the-ask', 'close',
+         'governance', 'economics/1', 'economics/2', 'economics/3',
+        'national-value/1',
+        'localization', 'close',
       ],
     },
     {
@@ -148,9 +161,9 @@ window.FM_CONFIG = {
       noteEn: 'Leads on airspace discipline and the authorization chain.',
       noteAr: 'يركّز على انضباط المجال الجوي وسلسلة التصاريح.',
       slides: [
-        'title', 'reframe', 'evidence-chain', 'ai-capability', 'demo-open', 'demo-close/1', 'demo-close/2',
+        'title', 'q-and-a', 'reframe', 'evidence-chain', 'ai-capability', 'demo-open', 'demo-close/1', 'demo-close/2',
         'track-moi', 'governance', 'flight-chain/1', 'flight-chain/2',
-        'localization', 'the-ask', 'close',
+        'localization', 'close',
       ],
     },
     {
@@ -160,9 +173,9 @@ window.FM_CONFIG = {
       noteEn: 'Leads on data sovereignty and hosting.',
       noteAr: 'يركّز على سيادة البيانات والاستضافة.',
       slides: [
-        'title', 'reframe', 'evidence-chain', 'ai-capability', 'demo-open', 'demo-close/1', 'demo-close/2',
+        'title', 'q-and-a', 'reframe', 'evidence-chain', 'ai-capability', 'demo-open', 'demo-close/1', 'demo-close/2',
         'track-mod', 'governance', 'flight-chain/1', 'flight-chain/2',
-        'localization', 'the-ask', 'close',
+        'localization', 'close',
       ],
     },
   ],
@@ -193,13 +206,6 @@ window.FM_CONFIG = {
       claimEn: 'GACA registration + remote-pilot certification + Public Security clearance',
       claimAr: 'تسجيل الطيران المدني + رخصة الطيار + التصريح الأمني',
       noteEn: 'Confirm exact current route and portal before naming it in front of the regulator.',
-    },
-    {
-      id: 'economics-model',
-      status: 'confirm',
-      claimEn: 'SAR 1.68m expected annual value on 1,000 ha; 2.8× benefit-cost',
-      claimAr: '1.68 مليون ريال قيمة سنوية متوقعة لكل 1000 هكتار',
-      noteEn: 'Synthetic planning assumptions. Must be labelled as such on the slide.',
     },
     {
       id: 'vision-2030-logo',

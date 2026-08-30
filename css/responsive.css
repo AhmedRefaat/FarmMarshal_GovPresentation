@@ -49,6 +49,18 @@
     grid-template-columns: 1fr;
   }
 
+  .fm-econ-flow { grid-template-columns: repeat(2, 1fr); }
+
+  .fm-maturity-layout { grid-template-columns: 1fr; gap: 1rem; min-height: 0; padding: 1rem; }
+  .fm-maturity-context { order: 2; }
+  .fm-maturity-target { width: min(390px, 88vw); }
+  .fm-maturity-marker { inset-inline-start: -3%; }
+
+  .fm-response-value-trigger { grid-template-columns: 1fr; gap: 0.5rem; }
+  .fm-response-value-dialog { width: calc(100vw - 1.5rem); max-height: calc(100vh - 1.5rem); padding: 1.25rem; }
+  .fm-response-value-dialog-title { font-size: 1.3rem !important; }
+  .fm-response-value-summary { grid-template-columns: 1fr; }
+
   .fm-chain { flex-direction: column; }
   [dir='rtl'] .fm-chain { flex-direction: column; }
   .fm-chain-step { min-width: 0; }

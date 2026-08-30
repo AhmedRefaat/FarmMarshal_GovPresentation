@@ -8,7 +8,7 @@
  * it and fall back to the full deck rather than hiding the wrong slides.
  */
 window.FM_SLIDE_INDEX = {
-  fingerprint: 'c9a22ab7df28',
+  fingerprint: '274deda743d6',
   groups: [
     {
       "id": "demo-close",
@@ -19,6 +19,16 @@ window.FM_SLIDE_INDEX = {
       "id": "flight-chain",
       "en": "Flight authorization chain",
       "ar": "سلسلة تصريح الطيران"
+    },
+    {
+      "id": "economics",
+      "en": "Unit economics",
+      "ar": "الجدوى الاقتصادية"
+    },
+    {
+      "id": "national-value",
+      "en": "National value",
+      "ar": "القيمة الوطنية"
     },
     {
       "id": "appendix",
@@ -68,12 +78,6 @@ window.FM_SLIDE_INDEX = {
       "group": null,
       "en": "What the AI does and does not do",
       "ar": "ما يفعله الذكاء الاصطناعي وما لا يفعله"
-    },
-    {
-      "key": "demo-open",
-      "group": null,
-      "en": "A case opens",
-      "ar": "فتح حالة"
     },
     {
       "key": "demo-expert",
@@ -130,10 +134,28 @@ window.FM_SLIDE_INDEX = {
       "ar": "ما لا نطلبه"
     },
     {
-      "key": "economics",
-      "group": null,
-      "en": "What a 1,000-hectare farm gains",
-      "ar": "ما الذي تكسبه مزرعة ألف هكتار"
+      "key": "economics/1",
+      "group": "economics",
+      "en": "Every better decision creates value inside the farm",
+      "ar": "كل قرار أفضل يصنع قيمة داخل المزرعة"
+    },
+    {
+      "key": "economics/2",
+      "group": "economics",
+      "en": "From potential savings to attributable impact",
+      "ar": "من فرصة محتملة إلى أثر مُثبت"
+    },
+    {
+      "key": "economics/3",
+      "group": "economics",
+      "en": "From official announcement to documented action",
+      "ar": "من الإعلان الرسمي إلى إجراء موثّق"
+    },
+    {
+      "key": "national-value/1",
+      "group": "national-value",
+      "en": "Every cubic metre preserved improves Saudi agricultural efficiency",
+      "ar": "كل متر مكعب محفوظ يرفع كفاءة الزراعة السعودية"
     },
     {
       "key": "localization",
@@ -142,16 +164,16 @@ window.FM_SLIDE_INDEX = {
       "ar": "ما القدرات التي يؤسس لها المشروع داخل المملكة؟"
     },
     {
-      "key": "the-ask",
-      "group": null,
-      "en": "One supervised pilot",
-      "ar": "تجربة واحدة خاضعة للإشراف"
-    },
-    {
       "key": "close",
       "group": null,
       "en": "Close",
       "ar": "الختام"
+    },
+    {
+      "key": "q-and-a",
+      "group": null,
+      "en": "Farm Marshal",
+      "ar": "فارم مارشال"
     },
     {
       "key": "appendix/1",
@@ -162,47 +184,71 @@ window.FM_SLIDE_INDEX = {
     {
       "key": "appendix/2",
       "group": "appendix",
+      "en": "One supervised pilot",
+      "ar": "تجربة واحدة خاضعة للإشراف"
+    },
+    {
+      "key": "appendix/3",
+      "group": "appendix",
+      "en": "A clear price for a sustainable service",
+      "ar": "سعر واضح لخدمة قابلة للاستمرار"
+    },
+    {
+      "key": "appendix/4",
+      "group": "appendix",
+      "en": "Water and energy baseline before calculating any SAR",
+      "ar": "خط أساس الماء والطاقة قبل احتساب أي ريال"
+    },
+    {
+      "key": "appendix/5",
+      "group": "appendix",
+      "en": "A business model that grows only when farm value grows",
+      "ar": "نموذج تجاري ينمو فقط عندما تنمو قيمة المزرعة"
+    },
+    {
+      "key": "appendix/6",
+      "group": "appendix",
       "en": "Verification register",
       "ar": "سجل التحقق"
     },
     {
-      "key": "appendix/3",
+      "key": "appendix/7",
       "group": "appendix",
       "en": "Expert vetting",
       "ar": "تأهيل الخبراء"
     },
     {
-      "key": "appendix/4",
+      "key": "appendix/8",
       "group": "appendix",
       "en": "Heat, dust and salt",
       "ar": "الحرارة والغبار والملوحة"
     },
     {
-      "key": "appendix/5",
+      "key": "appendix/9",
       "group": "appendix",
       "en": "Data retention, deletion and lawful access",
       "ar": "الاحتفاظ بالبيانات وحذفها والوصول النظامي"
     },
     {
-      "key": "appendix/6",
+      "key": "appendix/10",
       "group": "appendix",
       "en": "Incident and emergency procedures",
       "ar": "إجراءات الحوادث والطوارئ"
     },
     {
-      "key": "appendix/7",
+      "key": "appendix/11",
       "group": "appendix",
       "en": "Phase roadmap",
       "ar": "خارطة المراحل"
     },
     {
-      "key": "appendix/8",
+      "key": "appendix/12",
       "group": "appendix",
-      "en": "Economic model — assumptions exposed",
-      "ar": "النموذج الاقتصادي — الافتراضات مكشوفة"
+      "en": "Economic evidence and calculation register",
+      "ar": "سجل الأدلة والحسابات الاقتصادي"
     },
     {
-      "key": "appendix/9",
+      "key": "appendix/13",
       "group": "appendix",
       "en": "What we are, and what we are not",
       "ar": "من نحن"

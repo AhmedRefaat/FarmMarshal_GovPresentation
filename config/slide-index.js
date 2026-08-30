@@ -8,7 +8,7 @@
  * it and fall back to the full deck rather than hiding the wrong slides.
  */
 window.FM_SLIDE_INDEX = {
-  fingerprint: '274deda743d6',
+  fingerprint: 'a963a20aad03',
   groups: [
     {
       "id": "demo-close",
@@ -24,11 +24,6 @@ window.FM_SLIDE_INDEX = {
       "id": "economics",
       "en": "Unit economics",
       "ar": "الجدوى الاقتصادية"
-    },
-    {
-      "id": "national-value",
-      "en": "National value",
-      "ar": "القيمة الوطنية"
     },
     {
       "id": "appendix",
@@ -128,12 +123,6 @@ window.FM_SLIDE_INDEX = {
       "ar": "سلسلة تصريح الطيران"
     },
     {
-      "key": "flight-chain/2",
-      "group": "flight-chain",
-      "en": "What we are not asking for",
-      "ar": "ما لا نطلبه"
-    },
-    {
       "key": "economics/1",
       "group": "economics",
       "en": "Every better decision creates value inside the farm",
@@ -150,12 +139,6 @@ window.FM_SLIDE_INDEX = {
       "group": "economics",
       "en": "From official announcement to documented action",
       "ar": "من الإعلان الرسمي إلى إجراء موثّق"
-    },
-    {
-      "key": "national-value/1",
-      "group": "national-value",
-      "en": "Every cubic metre preserved improves Saudi agricultural efficiency",
-      "ar": "كل متر مكعب محفوظ يرفع كفاءة الزراعة السعودية"
     },
     {
       "key": "localization",
@@ -190,65 +173,77 @@ window.FM_SLIDE_INDEX = {
     {
       "key": "appendix/3",
       "group": "appendix",
+      "en": "What we are not asking for",
+      "ar": "ما لا نطلبه"
+    },
+    {
+      "key": "appendix/4",
+      "group": "appendix",
       "en": "A clear price for a sustainable service",
       "ar": "سعر واضح لخدمة قابلة للاستمرار"
     },
     {
-      "key": "appendix/4",
+      "key": "appendix/5",
       "group": "appendix",
       "en": "Water and energy baseline before calculating any SAR",
       "ar": "خط أساس الماء والطاقة قبل احتساب أي ريال"
     },
     {
-      "key": "appendix/5",
+      "key": "appendix/6",
       "group": "appendix",
       "en": "A business model that grows only when farm value grows",
       "ar": "نموذج تجاري ينمو فقط عندما تنمو قيمة المزرعة"
     },
     {
-      "key": "appendix/6",
+      "key": "appendix/7",
+      "group": "appendix",
+      "en": "Every cubic metre preserved improves Saudi agricultural efficiency",
+      "ar": "كل متر مكعب محفوظ يرفع كفاءة الزراعة السعودية"
+    },
+    {
+      "key": "appendix/8",
       "group": "appendix",
       "en": "Verification register",
       "ar": "سجل التحقق"
     },
     {
-      "key": "appendix/7",
+      "key": "appendix/9",
       "group": "appendix",
       "en": "Expert vetting",
       "ar": "تأهيل الخبراء"
     },
     {
-      "key": "appendix/8",
+      "key": "appendix/10",
       "group": "appendix",
       "en": "Heat, dust and salt",
       "ar": "الحرارة والغبار والملوحة"
     },
     {
-      "key": "appendix/9",
+      "key": "appendix/11",
       "group": "appendix",
       "en": "Data retention, deletion and lawful access",
       "ar": "الاحتفاظ بالبيانات وحذفها والوصول النظامي"
     },
     {
-      "key": "appendix/10",
+      "key": "appendix/12",
       "group": "appendix",
       "en": "Incident and emergency procedures",
       "ar": "إجراءات الحوادث والطوارئ"
     },
     {
-      "key": "appendix/11",
+      "key": "appendix/13",
       "group": "appendix",
       "en": "Phase roadmap",
       "ar": "خارطة المراحل"
     },
     {
-      "key": "appendix/12",
+      "key": "appendix/14",
       "group": "appendix",
       "en": "Economic evidence and calculation register",
       "ar": "سجل الأدلة والحسابات الاقتصادي"
     },
     {
-      "key": "appendix/13",
+      "key": "appendix/15",
       "group": "appendix",
       "en": "What we are, and what we are not",
       "ar": "من نحن"
